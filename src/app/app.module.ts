@@ -14,11 +14,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { HomeComponent } from './components/home/home.component';
+import { SlideShowComponent } from './components/slide-show/slide-show.component';
+import { CallToActionComponent } from './components/call-to-action/call-to-action.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FindSellerComponent } from './components/find-seller/find-seller.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    CategoriesComponent,
+    HomeComponent,
+    SlideShowComponent,
+    CallToActionComponent,
+    FooterComponent,
+    FindSellerComponent
   ],
   imports: [
     BrowserModule,

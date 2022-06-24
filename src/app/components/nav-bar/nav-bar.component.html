@@ -5,7 +5,7 @@
         <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
     </select>
     <input type="text" id="product" name="SearchProduct" placeholder="Search product"><br><br>
-    <button>Find Seller</button>
+    <button><a routerLink="/findSeller">Find Seller</a></button>
     <img class="cart" src="../../../assets/Images/Shopping Cart With Money.svg" alt="Cart">
     <img class="account" src="../../../assets/Images/Male User.svg" alt="Account">
     <img class="account" src="../../../assets/Images/Chevron Down.svg" alt="Account">
@@ -16,18 +16,6 @@
     </div>
 </nav>
 
-<div class="slide-show">
-    <img class="cart" src="../../../assets/Images/Back.png" alt="previous">
-    <p>Get whatever you need from the best sellers near you</p>
-    <img class="cart" src="../../../assets/Images/slide-cart.jpg" alt="Shopping Cart">
-    <img class="cart" src="../../../assets/Images/Forward.png" alt="next">
-</div>
-<section class="categories">
-    <div class="category-card">
-        <img class="category-img-1" src="../../../assets/Images/spacejoy-RqO6kwm4tZY-unsplash.jpg" alt="Category image">
-        <h3>Home & Office</h3>
-    </div>
-</section>
 
 
 
