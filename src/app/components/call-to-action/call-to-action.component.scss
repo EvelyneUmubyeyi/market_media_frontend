@@ -1,3 +1,24 @@
+.call_to_action{
+    background-color: #CED3DF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:240px; 
+    .call_elements{ 
+        display: flex;
+        justify-content: space-evenly;
+        width:60%;
+        p{
+            width: 220px;
+        }
+        .find-seller{
+            height:30px;
+        }  
+       
+    }
+}
+
+
 .logo{
     width: 70px;
     height: 70px;

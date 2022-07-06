@@ -1,0 +1,28 @@
+<div class="filters">
+    <input 
+    type="text" 
+    id="seller_name" 
+    name="name" 
+    placeholder="Enter Seller Name"
+    ngModel><br><br>
+    <div class="category">
+        <p>Select category</p>
+        <select id="categories" name="category" ngModel>
+            <!-- <option value="All">All categories</option> -->
+            <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
+        </select>
+    </div>
+    <div class="rating">
+        <p>Select rating</p>
+        <select id="rating" name="rating" ngModel>
+            <!-- <option value="All">Any rating</option> -->
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+
+        </select>
+    </div>
+    <button class="filter_button" (click)="getSellerDetail()">Filter</button>
+</div>

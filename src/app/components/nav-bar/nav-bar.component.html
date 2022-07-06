@@ -1,18 +1,24 @@
 <nav>
-    <img class="logo" src="../../../assets/Images/Logo2.png" alt="Logo">
-    <select id="categories" name="categories">
-        <option value="All">All categories</option>
-        <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
-    </select>
-    <input type="text" id="product" name="SearchProduct" placeholder="Search product"><br><br>
-    <button><a routerLink="/findSeller">Find Seller</a></button>
-    <img class="cart" src="../../../assets/Images/Shopping Cart With Money.svg" alt="Cart">
-    <img class="account" src="../../../assets/Images/Male User.svg" alt="Account">
-    <img class="account" src="../../../assets/Images/Chevron Down.svg" alt="Account">
+    <div class="upper">
+        <img class="logo" routerLink="/" src="../../../assets/Images/Logo2.png" alt="Logo">
+        <div class="search">
+            <select id="categories" name="categories">
+                <option value=0>All categories</option>
+                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+            </select>
+            <input type="text" id="product" name="SearchProduct" placeholder="Search product"><br><br>
+            <button class="search_button"><i class="bi bi-search"></i></button>
+        </div>
+        <button class="find_seller" routerLink="/findSeller">Find Seller</button>
+        <img class="cart nav_icon" src="../../../assets/Images/Shopping Cart With Money.svg" alt="Cart">
+        <div class="account">
+            <img class="account nav_icon" src="../../../assets/Images/Male User.svg" alt="Account">
+            <img class="account nav_icon" src="../../../assets/Images/Chevron Down.svg" alt="Account">
+        </div>
+    </div>
     <div class="links">
         <a class="seller_registration" href="#">Seller Registration</a>
-
-        <a class="deals" href="#">Deals</a>
+        <a class="deals" routerLink="/deals">Deals</a>
     </div>
 </nav>
 

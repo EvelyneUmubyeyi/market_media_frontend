@@ -1,0 +1,46 @@
+
+.find_sellers{
+    display: flex;
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+.sellers{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+    .seller{
+        margin-right: 2.4rem;
+        margin-bottom: 2.4rem;
+       
+    }
+}
+
+.options{
+    margin-top: 3rem;
+    margin-left: 2rem;
+}
+
+.filters{
+    .rating{
+        margin-top: 1rem;
+    }
+    .filter_button{
+        margin-top: 2rem;
+    }
+}
+small{
+    color:gray;
+}
+.rate_stars{
+    list-style: none;
+    display: flex;
+    .bi-star-fill{
+        color: goldenrod;
+    }
+}
+.seller_description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

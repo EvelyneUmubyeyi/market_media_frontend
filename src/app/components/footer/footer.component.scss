@@ -1,3 +1,18 @@
 .footer{
     background-color: #243C74;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:370px;
+    .links{
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        padding-top: 3rem;
+        padding-bottom:10rem;
+        #email{
+            height:23px;
+        }
+    }
+
 }

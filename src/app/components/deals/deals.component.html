@@ -1,0 +1,50 @@
+<div class="counter">
+    <p>1-24 of 1000 results</p>
+</div>
+<div class="find_deals">
+    <div class="filters">
+        <div class="category">
+            <p>Select category</p>
+            <select id="categories" name="category" ngModel="category" aria-describedby="categoryId" #categoryId>
+                <option value= 0 selected="selected">All categories</option>
+                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+        </select>
+        </div>
+        <button class="filter_button" (click)="getDeals()">Filter</button>
+    </div>
+    <div class="products">
+        
+        <div class="product" *ngFor="let deal of deals">
+            <img class="product_photo" src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+            alt="product"  height="200px">
+            <div class="deal_type">
+                <ng-template [ngIf]="deal.discount>0">
+                    <div class="label">Discount</div>
+                    <p>{{deal.discount}}%</p>
+                </ng-template>
+            </div>
+            <div class="deal_type">
+                <ng-template [ngIf]="deal.discount==0">
+                    <p class="label">Promotion</p>
+                </ng-template>
+            </div>      
+            <div class="prices">
+                <ng-template [ngIf]="deal.discount>0">
+                    <p class="old_price">{{deal.price}}RWF</p>
+                </ng-template>
+                <p>{{deal.totalPrice}}RWF</p>
+            </div>   
+            <p><strong>{{deal.name}}</strong></p>
+            <p><small>seller: {{deal.sellerName}}</small></p>
+            <!-- <p>{{deal.rating}}</p> -->
+            <ul class="rate_stars">
+                <li *ngFor='let in of counter(deal.rating) ;let i = index'>
+                    <i class="bi bi-star-fill"></i>
+                </li>
+                <li *ngFor='let in of counter(5-deal.rating) ;let i = index'>
+                    <i class="bi bi-star"></i>                
+                </li>
+            </ul>
+            <p>{{deal.number_of_ratings}} reviews</p>
+        </div>
+    </div>

@@ -7,6 +7,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { CommonModule } from '@angular/common';  
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,11 @@ import { SlideShowComponent } from './components/slide-show/slide-show.component
 import { CallToActionComponent } from './components/call-to-action/call-to-action.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FindSellerComponent } from './components/find-seller/find-seller.component';
+import { SellerFiltersComponent } from './components/seller-filters/seller-filters.component';
+import { MapSellersComponent } from './components/map-sellers/map-sellers.component';
+import { FindProductComponent } from './components/find-product/find-product.component';
+import { DealsComponent } from './components/deals/deals.component';
+import { AppConfig } from './app.config';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,11 @@ import { FindSellerComponent } from './components/find-seller/find-seller.compon
     SlideShowComponent,
     CallToActionComponent,
     FooterComponent,
-    FindSellerComponent
+    FindSellerComponent,
+    SellerFiltersComponent,
+    MapSellersComponent,
+    FindProductComponent,
+    DealsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +53,10 @@ import { FindSellerComponent } from './components/find-seller/find-seller.compon
     MatSelectModule,
     MatTabsModule,
     MatIconModule,
+    CommonModule,
   ],
   providers: [
+    AppConfig,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpHeadersInterceptor,
@@ -56,6 +68,7 @@ import { FindSellerComponent } from './components/find-seller/find-seller.compon
       multi: true,
     },
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

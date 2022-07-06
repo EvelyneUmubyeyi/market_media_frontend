@@ -1,0 +1,57 @@
+.find_deals{
+    display: flex;
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+.products{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+    .product{
+        margin-right: 2.4rem; 
+        // margin-bottom: 2.4rem;
+    }
+}
+
+.counter{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.deal_type{
+    display: flex;
+    margin-top: 0.5rem;
+
+    .label{
+        color:white;
+        background-color: goldenrod;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        margin-right: 1rem;
+
+
+    }
+}
+
+.prices{
+    display: flex;
+    // justify-content: space-between;
+    .old_price{
+        padding-right: 1rem;
+        text-decoration: line-through;
+    }
+}
+
+small{
+    color:gray;
+}
+.rate_stars{
+    list-style: none;
+    display: flex;
+    .bi-star-fill{
+        color: goldenrod;
+    }
+}

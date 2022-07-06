@@ -1,0 +1,21 @@
+
+.find_products{
+    display: flex;
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+.products{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+    .product{
+        margin-right: 2.4rem;
+        margin-bottom: 2.4rem;
+    }
+}
+
+.counter{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}

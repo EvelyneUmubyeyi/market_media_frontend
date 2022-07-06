@@ -1,11 +1,24 @@
-// nav{
-//     margin:auto;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     // border:2px solid;
-// }
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    width: 97%;
+    height:120px;
+    .upper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #categories,.find_seller{
+        height:30px;
+    }
+    #product{
+        height:26px;
+    }
 
+}
 .logo{
     width: 70px;
     height: 70px;
@@ -13,35 +26,16 @@
     object-fit: cover;
     object-position: center center;
 }
-// .bi-cart-fill{
-//     font-size: 2rem;
-// }
-// .bi-person-circle{
-//     font-size: 2rem;
-// }
-
-// .account{
-//     display: flex;
-//     width:70px;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-  
-// .input-group{
-//     // border:2px solid green;
-//     width: 900px;
-// }
-// .navbar-brand{
-//     // border:2px solid blue;
-// }
-// .input-group{
-//     // border:2px solid pink;
-// }
-// .form-control{
-//     height: 50px;
-//     border-radius: 0px 50px 50px 0px;
-// }
-// .categories{
-//     border-radius: 50px 0px 0px 50px;
-    
-// }
+.nav_icon{
+    height:2.5rem;
+}
+.seller_registration{
+    padding-right: 1rem;
+}
+.search{
+    display: flex;
+}
+.search_button{
+    height:2.25em;
+    width:2rem;
+}

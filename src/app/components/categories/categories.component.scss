@@ -1,0 +1,9 @@
+.categories{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+    .category-card{
+        margin-right: 2.4rem;
+        margin-bottom: 2.4rem;
+    }
+}

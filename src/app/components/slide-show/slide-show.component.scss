@@ -1,0 +1,10 @@
+.slide_show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    .prev,.next{
+        height:4rem;
+        width: 4rem;
+    }
+}
