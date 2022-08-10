@@ -1,0 +1,58 @@
+
+<div class="options">
+    <button routerLink="/findSeller">See List</button>
+    <button routerLink="/findSeller/map">See Map</button>
+</div>
+<div class="find_sellers">
+    <div class="filters">
+        <div class="seller">
+            <p>Select seller name</p>
+            <select id="seller_names" name="name" ngModel="name" aria-describedby="sellerId" #sellerId>
+                <option value=0 selected="selected">All</option>
+                <option *ngFor="let slr of slrs" value="{{slr.id}}">{{slr.seller}}</option>
+            </select>
+        </div>
+        <div class="rating">
+            <p>Select rating</p>
+            <select id="rating" name="rating" ngModel="rating" aria-describedby="rating" #rating>
+                <option value=0 selected ="selected">0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+    
+            </select>
+        </div>
+        <button class="filter_button" (click)="getProductSellers()">Filter</button>
+    </div>
+    <div class="sellers">
+        <div class="seller" *ngFor="let seller of sellers" routerLink="/sellerDescription" (click)="setSellerId(seller.sellerId)">
+            <img class="seller_photo" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMGljb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" 
+            alt="Logo"  height="200px">
+            <div class="seller_description">
+                <p><strong>{{seller.sellerName}}</strong></p>
+                <p><strong>Price: {{seller.price}} RWF</strong></p>
+                <p><i class="bi bi-geo-alt-fill"></i>{{seller.location}}</p>
+                <div class="reviews">
+                    <ul class="rate_stars">
+                        <li *ngFor='let in of counter(seller.rating) ;let i = index'>
+                            <i class="bi bi-star-fill"></i>
+                        </li>
+                        <li *ngFor='let in of counter(5-seller.rating) ;let i = index'>
+                            <i class="bi bi-star"></i>                
+                        </li>
+                    </ul>
+                    <p class="number_of_reviews">{{seller.number_of_ratings}} reviews</p>
+                </div>
+                <ng-template [ngIf]="seller.availabilityStatus=='No'">
+                    <p class="availability"><small>Product is out of stock</small></p>
+                </ng-template>
+                <ng-template [ngIf]="seller.availabilityStatus=='Yes'">
+                    <p class="availability"><small>Product is available</small></p>
+                </ng-template>
+            </div>
+            <button class="add_to_cart">Add To Cart</button>
+        </div>
+    </div>
+</div>

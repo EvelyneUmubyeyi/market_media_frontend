@@ -1,27 +1,38 @@
-<nav>
+<nav *ngIf="nav.visible">
     <div class="upper">
         <img class="logo" routerLink="/" src="../../../assets/Images/Logo2.png" alt="Logo">
-        <div class="search">
-            <select id="categories" name="categories">
-                <option value=0>All categories</option>
-                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
-            </select>
-            <input type="text" id="product" name="SearchProduct" placeholder="Search product"><br><br>
+
+        <form class="search" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div class="select-wrapper">
+                <select id="categoryId" name="categoryId" #categoryId>
+                    <option value=0>All categories</option>
+                    <option *ngFor="let category of categories" value="{{category.id}}">{{category.Name}}</option>
+                </select>
+            </div>
+            <input type="text" id="productName" name="productName" placeholder="Search product" #productName><br><br>
             <button class="search_button"><i class="bi bi-search"></i></button>
-        </div>
+        </form>
         <button class="find_seller" routerLink="/findSeller">Find Seller</button>
-        <img class="cart nav_icon" src="../../../assets/Images/Shopping Cart With Money.svg" alt="Cart">
-        <div class="account">
-            <img class="account nav_icon" src="../../../assets/Images/Male User.svg" alt="Account">
-            <img class="account nav_icon" src="../../../assets/Images/Chevron Down.svg" alt="Account">
+        <!-- <img class="cart nav_icon" src="../../../assets/Images/Shopping Cart With Money.svg" alt="Cart"> -->
+        <i class="bi bi-cart4"></i>
+        <div class="account account_icons"  *ngIf="authenticationService.isAuthenticated">
+            <i class="bi bi-person-circle" routerLink="MyAccount/MyProfile"></i>
+            <div class="dropdown">
+                <i class="bi bi-caret-down-fill"></i>
+                <div class="choices">
+                    <label>
+                        <input type="radio" name="account" class="first" routerLink="MyAccount/MyProfile"/> <span>My Account</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="account" (click)="logout()" class="last"/> <span>Log Out</span>
+                    </label>
+                </div>
+            </div>
         </div>
+        <button class="login" routerLink="/login" *ngIf="!authenticationService.isAuthenticated">Login</button>
     </div>
     <div class="links">
-        <a class="seller_registration" href="#">Seller Registration</a>
+        <a class="seller_registration" routerLink="/sellerRegistration">Seller Registration</a>
         <a class="deals" routerLink="/deals">Deals</a>
     </div>
 </nav>
-
-
-
-

@@ -1,0 +1,151 @@
+<div class="reg">
+    <form *ngFor="let application of applications">
+        <div class="header">
+            <img class='logo' src="https://images.unsplash.com/photo-1602934445884-da0fa1c9d3b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxvZ298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"/> 
+        </div>
+        <div class="body">
+
+            <h1>{{application.bssName}}</h1>   
+
+            <div class="business_info">
+                <h2>BUSINESS INFORMATION</h2>
+                <div class="section_content">
+                    <div class="form-group">
+                        <label for="Tin Number">Tin Number:</label>
+                        <p>{{application.tin}}</p>
+                    </div>
+                    <div class="form-group">
+                        <div for="BusinessDescription">BusinessDescription:</div>
+                        <p>{{application.about}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="Website">Website:</label>
+                        <p>{{application.website}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="SocialMedia">SocialMedia:</label>
+                        <p>{{application.socialmedia}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact_info">
+
+                <h2 >CONTACT PERSON INFORMATION</h2>
+
+                <div class="section_content">
+                    <div class="form-group">
+                        <label for="Name">Name:</label>
+                        <p>{{application.contactName}}</p>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="PhoneNumber">PhoneNumber:</label>
+                        <p>{{application.contactPhone}}</p>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="Email">Email:</label>
+                        <p>{{application.contactEmail}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bss_contact_info">
+                <h2>BUSINESS CONTACT INFORMATION</h2>
+
+                <!-- <ng-template [ngIf]="branchesno==1"> -->
+                    <div class="branches" *ngFor="let branch of branches; let i = index">
+                        <div class="branch">
+                            <div class="section_content">
+                                <h2>Branch{{i+1}}</h2>
+                                <div class="form-group">
+                                    <label for="Email">Email:</label>
+                                    <p>{{branch.email}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PhoneNumber">PhoneNumber:</label>
+                                    <p>{{branch.phone}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Province">Province:</label>
+                                    <p>{{branch.province}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="District">District:</label>
+                                    <p>{{branch.district}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Sector">Sector:</label>
+                                    <p>{{branch.sector}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Cell">Cell:</label>
+                                    <p>{{branch.cell}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Village">Village:</label>
+                                    <p>{{branch.village}}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="StreetNumber">StreetNumber:</label>
+                                    <p>{{branch.street}}</p>
+                                </div>
+                        
+                                <div class="form-group">
+                                    <label for="AddressDetails">Address Details:</label>
+                                    <p>{{branch.addressDetails}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- </ng-template> -->
+                <!-- <ng-template [ngIf]="branchesno>1">
+                <h3>Branches</h3>
+                <div class="section_content">
+                    <div class="form-group">
+                        <label for="Email">Email:</label>
+                        <p>{{branch.email}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="PhoneNumber">PhoneNumber:</label>
+                        <p>{{branch.phone}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="Province">Province:</label>
+                        <p>{{branch.province}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="District">District:</label>
+                        <p>{{branch.district}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="Sector">Sector:</label>
+                        <p>{{branch.sector}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="Cell">Cell:</label>
+                        <p>{{branch.cell}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="Village">Village:</label>
+                        <p>{{branch.village}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="StreetNumber">StreetNumber:</label>
+                        <p>{{branch.street}}</p>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="AddressDetails">Address Details:</label>
+                        <p>{{branch.addressDetails}}</p>
+                    </div>
+                </div>
+                </ng-template> -->
+            </div>
+            <button>Approve</button>
+            <button>Decline</button>
+        </div>
+    </form>
+</div>

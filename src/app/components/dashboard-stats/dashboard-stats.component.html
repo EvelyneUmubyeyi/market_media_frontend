@@ -1,0 +1,38 @@
+<div class="seller_dashboard" *ngFor="let stat of stats">
+  <div class="form">
+      <h2>Hello {{stat.sellerName}}</h2>
+      <p class="categories">Your Domains: <span *ngFor="let category of categories; last as isLast">{{category.category}}
+        <span *ngIf="!isLast">, </span>
+      </span></p>
+  </div>
+    
+    <div class="cards">
+      <div class="container">
+        <p>Added Product</p>
+        <p class="stats">{{stat.addedProductsNo}}</p>
+      </div>
+      <div class="container">
+        <p>Recieved orders</p>
+        <p class="stats">2</p>
+      </div>
+      <div class="container">
+        <p>Published Product</p>
+        <p class="stats">3</p>
+      </div>
+      <div class="container">
+        <p>Pending Orders </p>
+        <p class="stats">3</p>
+    
+      </div>
+      <div class="container">
+        <p>Revenue Generated</p>
+        <p class="stats">1000</p>
+    
+      </div>
+      <div class="container">
+        <p>Products on deal</p>
+        <p class="stats">2</p>
+    
+      </div>
+    </div>
+</div>

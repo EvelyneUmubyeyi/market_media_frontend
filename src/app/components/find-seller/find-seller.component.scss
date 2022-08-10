@@ -1,32 +1,70 @@
 
 .find_sellers{
     display: flex;
-    margin-top: 4rem;
+    justify-content: space-between;
+    margin-top: 2.5rem;
     margin-left: 2rem;
+    // border:2px solid;
 }
 
 .sellers{
     display:flex;
     flex-wrap: wrap;
-    margin-left: 5rem;
+    width:75%;
+    margin-left: 3.5rem;
+    // border: 2px solid;
+    // margin-left: 5rem;
     .seller{
-        margin-right: 2.4rem;
-        margin-bottom: 2.4rem;
-       
+        // margin-right: 3rem;
+        // margin-bottom: 3rem;
+        height: 320px;
+        margin-right: 3rem;
+        margin-bottom: 3rem;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 25px;
+        &:hover {
+            cursor: pointer;
+        }
+        img{    
+            border-radius: 25px 25px 0px 0px;
+        }
     }
 }
 
 .options{
     margin-top: 3rem;
     margin-left: 2rem;
+    button{
+        margin-right: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+    }
 }
 
 .filters{
-    .rating{
-        margin-top: 1rem;
-    }
+    background-color: #D9D9D9;
+    width:250px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    padding-left: 5rem;
+    padding-top: 3rem;
+    
     .filter_button{
-        margin-top: 2rem;
+        margin-top: 1rem;
+        padding-left: 2.7rem;
+        padding-right: 2.7rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        width:fit-content;
+        // font-size: 1rem;
+    }
+    p{
+        font-weight:bold;
+        font-size: 1.1rem;
     }
 }
 small{
@@ -35,7 +73,8 @@ small{
 .rate_stars{
     list-style: none;
     display: flex;
-    .bi-star-fill{
+    padding-right: 1rem;
+    .bi-star-fill, .bi-star-half,.bi-star{
         color: goldenrod;
     }
 }
@@ -43,4 +82,49 @@ small{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.reviews .number_of_reviews{
+    visibility: hidden;
+    width: 100px;
+    background-color: #D9D9D9;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 90%;
+}
+
+.reviews .number_of_reviews::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #D9D9D9 transparent transparent;
+}
+
+.reviews:hover .number_of_reviews {
+    visibility: visible;
+}
+
+.reviews{
+    position: relative;
+    display: inline-block;
+}
+.reviews:hover p{
+    display:inline;
+}
+
+
+.group{
+    padding-bottom: 1rem;
+    select{
+        width:125px;
+    }
 }

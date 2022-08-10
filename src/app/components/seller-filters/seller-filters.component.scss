@@ -1,8 +1,33 @@
-.filters{
-    .rating{
+.filters {
+    background-color: #D9D9D9;
+    width: 250px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    padding-left: 5rem;
+    padding-top: 3rem;
+
+    .rating {
         margin-top: 1rem;
     }
-    .filter_button{
+
+    .filter_button {
         margin-top: 2rem;
+        padding-left: 2.7rem;
+        padding-right: 2.7rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        width:fit-content;     
+    }
+    
+    input{
+        padding-left: 0.8rem;
+        width: 150px;
+    }
+
+    select{
+        padding-left: 0.8rem;
+        width: 165px;
     }
 }

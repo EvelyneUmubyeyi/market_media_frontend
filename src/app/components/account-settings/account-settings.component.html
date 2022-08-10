@@ -1,0 +1,16 @@
+<div class="container">
+    <h1 class="title">Account Settings</h1>
+    <label for="Email"><strong>Email</strong></label>
+    <!-- <input  ngModel Email="Email" #Email="ngModel"  id="Email" type="text" class="form-control"> -->
+    <div class="group">
+        <p class="form-control">{{settings.email}}</p>
+        <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+    </div>
+    <label for="Password"><strong>Password</strong></label>
+    <!-- <input [type]="show ? 'text' : 'password'" /> -->
+    <div class="group">
+        <p class="form-control">********</p>
+        <button routerLink="/ChangePassword">Edit</button>
+    </div>
+</div>
+  

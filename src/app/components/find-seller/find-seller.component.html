@@ -4,63 +4,69 @@
 </div>
 <div class="find_sellers">
     <div class="filters">
-        <!-- <input type="text" id="seller_name"  name="name"  placeholder="Enter Seller Name"
-        ngModel="id"><br><br> -->
-        <div class="seller">
-            <p>Select seller name</p>
-            <select id="seller_names" name="name" ngModel="name" aria-describedby="sellerId" #sellerId>
-                <option value=0 selected="selected">All</option>
-                <option *ngFor="let slr of slrs" value="{{slr.id}}">{{slr.name}}</option>
-            </select>
-        </div>
-        <div class="category">
-            <p>Select category</p>
-            <select id="categories" name="category" ngModel="category" aria-describedby="categoryId" #categoryId>
-                <option value= 0 selected="selected">All categories</option>
-                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
-            </select>
-        </div>
-        <div class="rating">
-            <p>Select rating</p>
-            <select id="rating" name="rating" ngModel="rating" aria-describedby="rating" #rating>
-                <option value=0 selected ="selected">0</option>
-                <option value=1>1</option>
-                <option value=2>2</option>
-                <option value=3>3</option>
-                <option value=4>4</option>
-                <option value=5>5</option>
-    
-            </select>
+        <div class="filters_list">
+            <div class="seller group">
+                <p>Select seller name</p>
+                <select id="seller_names" name="name" ngModel="name" aria-describedby="sellerId" #sellerId>
+                    <option value=0 selected="selected">All</option>
+                    <option *ngFor="let slr of slrs" value="{{slr.id}}">{{slr.name}}</option>
+                </select>
+            </div>
+            <div class="category group">
+                <p>Select category</p>
+                <select id="categories" name="category" ngModel="category" aria-describedby="categoryId" #categoryId>
+                    <option value= 0 selected="selected">All categories</option>
+                    <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                </select>
+            </div>
+            <div class="rating group">
+                <p>Select rating</p>
+                <select id="rating" name="rating" ngModel="rating" aria-describedby="rating" #rating>
+                    <option value=0 selected ="selected">0</option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+        
+                </select>
+            </div>
         </div>
         <button class="filter_button" (click)="getSellerDetail()">Filter</button>
     </div>
     <div class="sellers">
-        <div class="seller" *ngFor="let seller of sellers">
+        <div class="seller" *ngFor="let seller of sellers" routerLink="/sellerDescription" (click)="setSellerId(seller.sellerId)">
             <img class="seller_photo" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMGljb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" 
             alt="Logo"  height="200px">
             <div class="seller_description">
-                <p><strong>{{seller.name}}</strong></p>
+                <p><strong>{{seller.Name}}</strong></p>
                 <p><i class="bi bi-geo-alt-fill"></i>{{seller.location}}</p>
                 <p><small>{{seller.category}}</small></p>
-                <ul class="rate_stars">
-                    <li *ngFor='let in of counter(seller.rating) ;let i = index'>
-                        <i class="bi bi-star-fill"></i>
-                    </li>
-                    <li *ngFor='let in of counter(5-seller.rating) ;let i = index'>
-                        <i class="bi bi-star"></i>                
-                    </li>
-                </ul>
-                <p>{{seller.number_of_ratings}} reviews</p>
+                <div class="reviews">
+                    <ul class="rate_stars">
+                        <ng-template [ngIf]="seller.rating % 1 != 0">
+                            <li *ngFor='let in of counterRound(seller.rating) ;let i = index'>
+                                <i class="bi bi-star-fill"></i>
+                            </li>
+                            <li>
+                                <i class="bi bi-star-half"></i>
+                            </li>
+                            <li *ngFor='let in of counter(5-round(seller.rating)) ;let i = index'>
+                                <i class="bi bi-star"></i>                
+                            </li>
+                        </ng-template>
+                        <ng-template [ngIf]="seller.rating % 1 == 0">
+                            <li *ngFor='let in of counter(seller.rating) ;let i = index'>
+                                <i class="bi bi-star-fill"></i>
+                            </li>
+                            <li *ngFor='let in of counter(5-seller.rating) ;let i = index'>
+                                <i class="bi bi-star"></i>                
+                            </li>
+                        </ng-template>
+                    </ul>
+                <p class="number_of_reviews">{{seller.number_of_ratings}} reviews</p>
+                <div class="reviews">
             </div>
         </div>
-        <!-- <div class="seller">
-            <img class="seller_photo" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMGljb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" 
-            alt="Logo"  height="200px">
-            <p>Name</p>
-            <p>location</p>
-            <p>category</p>
-            <p>rating</p>
-            <p>Number of ratings</p>
-        </div> -->
     </div>
 </div>

@@ -5,23 +5,19 @@
     <div class="filters">
         <div class="sub_category">
             <p>Select sub-category</p>
-            <select id="sub-category" name="sub-category" ngModel>
-                <!-- <option value="All">Any rating</option> -->
-                <option value=1>1</option>
-                <option value=2>2</option>
-                <option value=3>3</option>
-                <option value=4>4</option>
-                <option value=5>5</option>
-    
-            </select>
+            <select id="categories" name="category" ngModel="category" aria-describedby="categoryId" #categoryId>
+                <option value= 0 selected="selected">All categories</option>
+                <option *ngFor="let subCategory of subCategories" value="{{subCategory.id}}">{{subCategory.name}}</option>
+            </select>    
         </div>
     </div>
     <div class="products">
-        <div class="product" *ngFor = "let product of products">
-            <!-- <p>Hello</p> -->
+        <div class="product" *ngFor = "let product of products" routerLink="/productDescription"
+        (click)="setProductIdDescription(product.id)">
             <img class="product_photo" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2R1Y3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
             alt="product"  height="200px">
             <p>{{product.name}}</p>
-            <a routerLink="/findSeller">See list of sellers</a>
+            <a routerLink="/productSellers" (click)="setProductId(product.id)">See list of sellers</a>
+
         </div>
     </div>

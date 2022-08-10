@@ -1,0 +1,92 @@
+.logo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    margin-right: 5rem;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    button{
+        margin-top: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        width: fit-content;
+        align-items: center;
+    }
+}
+form{
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    // border:1px solid red;
+    // width:80%;
+    padding-left: 4rem;
+    padding-top: 0;
+
+}
+
+.body{
+    padding-top: 2rem;
+}
+
+h1{
+    padding-bottom: 2rem;
+}
+
+h2{
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+.section_content{
+    // border:1px solid;
+    padding-left: 1rem;
+}
+.form-group{
+    padding-bottom: 1rem;
+}
+
+.branch h2{
+    padding-top: 0;
+    padding-bottom: 1rem;
+}
+label{
+    font-weight: 700;
+}
+
+// button{
+//     margin-left: 1rem;
+//     margin-top: 1rem;
+//     margin-bottom: 2rem;
+//     color:white;
+//     background-color: goldenrod;
+//     padding-left: 1.5rem;
+//     padding-right: 1.5rem;
+//     padding-top: 0.5rem;
+//     padding-bottom: 0.5rem;
+//     border: none;
+// }
+
+.top{
+    display: flex;
+    align-items: center;
+
+    button{
+        width: fit-content;
+        height: fit-content;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+    
+}
+
+.seller_name{
+    margin-right: 35rem;
+    padding: 0;
+}

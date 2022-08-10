@@ -7,21 +7,35 @@
     .call_elements{ 
         display: flex;
         justify-content: space-evenly;
-        width:60%;
+        align-items: center;
+        width:75%;
         p{
-            width: 220px;
+            width: 275px;
+            // font-weight: 600;
+            font-family: 'Montserrat';
+            font-style: italic;
+            font-size: 1.4rem;
         }
         .find-seller{
             height:30px;
         }  
+
+        button{
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border: none;
+        }
+
        
     }
 }
 
 
 .logo{
-    width: 70px;
-    height: 70px;
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center center;

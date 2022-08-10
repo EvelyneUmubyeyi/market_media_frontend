@@ -1,0 +1,42 @@
+<table>
+    <tr>
+      <th class="first">No</th>
+      <th>Picture</th>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Measurement Unit</th>
+      <th>Price</th>
+      <th>Date Added</th>
+      <th>Discount</th>
+      <th>Promotion</th>
+      <th>Rating</th>
+    </tr>
+    <!-- <div class="table-rows"> -->
+        <tr *ngFor="let product of products; let i = index">
+            <td class="first">{{i+1}}</td>
+            <td><img class="seller_photo" src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" 
+              alt="product_img"></td>
+            <td>{{product.productName}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.measurementUnit}}</td>
+            <td>{{product.totalPrice}}</td>
+            <td>{{product.dateAdded | date:'medium'}}</td>
+            <td>{{product.discount }}</td>
+            <ng-template [ngIf]="product.promotion!=null">
+                <td>{{product.promotion}}</td>
+            </ng-template>
+            <ng-template [ngIf]="product.promotion == null ">
+                <td>None</td>
+            </ng-template>
+            <td>{{product.rating}}</td>
+            <!-- <ul class="rate_stars">
+                <li *ngFor='let in of counter(product.rating) ;let i = index'>
+                    <i class="bi bi-star-fill"></i>
+                </li>
+                <li *ngFor='let in of counter(5-product.rating) ;let i = index'>
+                    <i class="bi bi-star"></i>                
+                </li>
+            </ul> -->
+        </tr>
+    <!-- </div> -->
+  </table>

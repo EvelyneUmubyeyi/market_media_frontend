@@ -10,6 +10,7 @@
     margin-left: 5rem;
     .product{
         margin-right: 2.4rem; 
+        margin-bottom: 2.5rem;
         // margin-bottom: 2.4rem;
     }
 }
@@ -54,4 +55,14 @@ small{
     .bi-star-fill{
         color: goldenrod;
     }
+    .bi-star{
+        color: goldenrod;
+    }
+}
+
+.number_of_reviews{
+    display: none;
+}
+.reviews:hover p{
+    display:inline;
 }

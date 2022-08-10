@@ -1,0 +1,51 @@
+.seller_photo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+}
+table{
+    width:75%;
+    border: 1px solid #EEEEEE;
+    border-collapse: collapse;
+    margin-left: 21rem;
+    margin-top: 3rem;
+}
+th{
+    // border: 1px solid black;
+    padding: 1rem;
+    // padding-bottom: 4px;
+    vertical-align: middle;
+    text-align: left;
+} 
+
+td {
+    // border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    // padding-bottom: 4px;
+    vertical-align: middle;
+}
+
+tr{
+    &:nth-of-type(odd) {
+		background: #EEEEEE;
+	}
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.first{
+    padding-left: 2rem;
+}
+
+.rate_stars{
+    list-style: none;
+    display: flex;
+    .bi-star-fill{
+        color: goldenrod;
+    }
+}

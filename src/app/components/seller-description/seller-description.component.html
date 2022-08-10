@@ -1,0 +1,46 @@
+<div class="about_seller">
+<h1>About Seller</h1>
+<div class="Seller" *ngFor="let seller of sellers">
+    <div class="seller_pic">
+        <img class="seller_photo" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMGljb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" 
+        alt="Logo"  height="200px">
+        <button class="see_products" (click)="setSellerId(seller.sellerId)">See Their Products</button>
+    </div>
+    <div class="seller_text">
+      <h1>{{seller.Name}}</h1>
+      <ul class="rate_stars">
+        <ng-template [ngIf]="seller.rating % 1 != 0">
+            <li *ngFor='let in of counterRound(seller.rating) ;let i = index'>
+                <i class="bi bi-star-fill"></i>
+            </li>
+            <li>
+                <i class="bi bi-star-half"></i>
+            </li>
+            <li *ngFor='let in of counter(5-round(seller.rating)) ;let i = index'>
+                <i class="bi bi-star"></i>                
+            </li>
+        </ng-template>
+        <ng-template [ngIf]="seller.rating % 1 == 0">
+            <li *ngFor='let in of counter(seller.rating) ;let i = index'>
+                <i class="bi bi-star-fill"></i>
+            </li>
+            <li *ngFor='let in of counter(5-seller.rating) ;let i = index'>
+                <i class="bi bi-star"></i>                
+            </li>
+        </ng-template>
+    </ul>
+      <p><span class="label">Location: </span>{{seller.location}}</p>
+      <p><span class="label">Categories:</span>
+        <span *ngFor="let category of categories; last as isLast">
+          {{category.category}} <span *ngIf="!isLast">,</span>
+        </span>
+      </p> 
+      <p class="label about">About me:</p>
+      <p>{{seller.about}}</p>
+      <p><span class="label">My website: </span>{{seller.website}}</p>
+      <p><span class="label">My socialmedia handles: </span>{{seller.socialmedia}}</p>
+    </div>
+  </div>
+</div>
+
+<app-seller-products> </app-seller-products>

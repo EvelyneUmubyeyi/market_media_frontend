@@ -1,0 +1,62 @@
+<p>AboutProduct</p>
+<div class="Products">
+    <div class="Product" *ngFor = "let product of products">
+        <div class="product_pic">
+
+            <img class="product_pic" src="https://images.unsplash.com/photo-1600788907416-456578634209?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&q=80"
+            alt="cart item" height="200px"/>
+            <button class="see_sellers" (click)="setProductId(product.productId)" >List of sellers</button>
+        </div>
+    <div class="item-description">
+        <p>{{product.name}}</p>
+        <p>{{product.manufacturer}}</p>
+        <div class="reviews">
+            <ul class="rate_stars">
+                <li *ngFor='let in of counter(product.rating) ;let i = index'>
+                    <i class="bi bi-star-fill"></i>
+                </li>
+                <li *ngFor='let in of counter(5-product.rating) ;let i = index'>
+                    <i class="bi bi-star"></i>                
+                </li>
+            </ul>
+            <p class="number_of_reviews">{{product.number_of_ratings}} reviews</p>
+        </div>
+
+        <ng-template [ngIf]="product.availabilityStatus=='No'">
+            <p class="availability"><small>Product is out of stock</small></p>
+        </ng-template>
+        <ng-template [ngIf]="product.availabilityStatus=='Yes'">
+            <p class="availability"><small>Product is available</small></p>
+        </ng-template>
+
+        <div class="form-group">
+        <div for="ProductDescription">ProductDescription</div>
+        <P> {{product.product_Description}}</P>
+    </div>
+    </div>
+  </div>
+</div>
+<!-- <div class= "container">
+  <div class="row mt-2">
+    <div class="col">
+      <button type="button" class="btn btn-primary" (click)="openModal">Add to cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Continue shoping</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="add()">add</button>
+      </div>
+    </div>
+  </div>
+</div> -->

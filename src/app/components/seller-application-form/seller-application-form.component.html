@@ -1,0 +1,160 @@
+<h1 class="reg page_title">Seller Registration Form</h1>
+<form class="application_form" #saveForm="ngForm" (ngSubmit)="onSubmit(saveForm)" autocomplete="off">
+  <div class="registra">
+    <div class="header">
+      <img [src]="url" title="Profile Picture" class="logo" />
+      <input type="file" id="img" style="display:none" accept="image/*" (change)="onSelect($event)" />
+      <button>Upload Image</button>
+    </div>
+
+    <div class="text">
+      <div class="business_info">
+        <h2>BUSINESS INFORMATION</h2>
+
+        <div class="form-group">
+          <label for="Business Name">Business Name</label>
+          <div><input name="BusinessName" id="BusinessName" [(ngModel)]="registra.BusinessName" type="text"
+              class="form-control"> </div>
+        </div>
+
+        <div class="form-group">
+          <div for="BusinessDescription">BusinessDescription</div>
+          <textarea rows="4" [(ngModel)]="registra.BusinessDescription" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="TinNumber">Tin Number</label>
+          <div> <input name="TinNumber" id="TinNumber" [(ngModel)]="registra.TinNumber" type="text"
+              class="form-control"> </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Mobile">Mobile Payment Code</label>
+          <div> <input name="Mobile" id="Mobile" [(ngModel)]="registra.mobilePaymentCode" type="text"
+              class="form-control"> </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Website">Website Link</label>
+          <div> <input name="Website" id="Website" [(ngModel)]="registra.Website" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="SocialMedia">SocialMedia Link (i.e: social media account where you are highly responsive)</label>
+          <div><input name="SocialMedia" id="SocialMedia" [(ngModel)]="registra.SocialMedia" type="text"
+              class="form-control"> </div>
+        </div>
+        <h2>BUSINESS CONTACTS</h2>
+        <div class="form-group">
+          <label>Business Email</label>
+          <div><input name="email" id="email" [(ngModel)]="headquarter.email" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Business Phone Number</label>
+          <div><input name="phone" id="phone" [(ngModel)]="headquarter.phone" type="text" class="form-control">
+          </div>
+        </div>
+        <h2>BUSINESS LOCATION</h2>
+        <div class="form-group">
+          <label for="Province">Province</label>
+          <select name="Province" id="Province" #provinceId (change)="getDistricts($event)">
+            <option value=0>Select Province</option>
+            <option *ngFor="let province of provinces" value="{{province.Id}}" class="form-control">{{province.Name}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="District">District</label>
+          <select name="District" id="District" #districtId (change)="getSectors($event)">
+            <option value=0>Select District</option>
+            <option *ngFor="let district of districts" value="{{district.Id}}" class="form-control">{{district.Name}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Sector">Sector</label>
+          <select name="Sector" id="Sector" #sectorId (change)="getCells($event)">
+            <option value=0>Select Sector</option>
+            <option *ngFor="let sector of sectors" value="{{sector.Id}}" class="form-control">{{sector.Name}}
+            </option>
+          </select>
+          <div class="form-group">
+            <label for="Cell">Cell</label>
+            <select name="Cell" id="Cell" #cellId (change)="getVillages($event)">
+              <option value=0>Select Cell</option>
+              <option *ngFor="let cell of cells" value="{{cell.Id}}" class="form-control">{{cell.Name}}
+              </option>
+            </select>
+            <div class="form-group">
+              <label for="Village">Village</label>
+              <select name="Village" id="Village" [(ngModel)]="headquarter.villageId" #villageId>
+                <option value=0 selected = "selected">Select Village</option>
+                <option *ngFor="let village of villages" value="{{village.Id}}" class="form-control">{{village.Name}}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="StreetNumber">StreetNumber</label>
+              <div><input name="StreetNumber" id="StreetNumber" [(ngModel)]="headquarter.StreetNumber" type="text"
+                  class="form-control"></div>
+            </div>
+            <div class="form-group">
+              <label for="Details">Address Details</label>
+              <div><input Details="Details" id="Details" [(ngModel)]="headquarter.addressDetails" type="text"
+                  class="form-control"></div>
+            </div>
+
+            <div class="form-group radio">
+              <form action="/action_page.php">
+                <p>Do you have other branches:</p>
+                <div class="inputs">
+                    <input type="radio" id="yes" name="more_branches" value="moreBranches" [checked]="moreBranches"
+                    (click)="show()">
+                    <label>Yes</label><br>
+                    <input type="radio" id="no" name="more_branches" value="moreBranches" [checked]="moreBranches"
+                    (click)="hide()">
+                    <label>No</label><br>
+                </div>
+              </form>
+            </div>
+            <div class="branch" *ngIf="moreBranches">
+              <h2>Branch Details</h2>
+              <div class="form-group">
+                <label>Branch Name</label>
+                <div><input name="Name" id="Name" [(ngModel)]="branch.Name" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Branch email</label>
+                <div><input name="email" id="email" [(ngModel)]="branch.email" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Branch Phone Number</label>
+                <div><input name="phone" id="phone" [(ngModel)]="branch.phone" type="text" class="form-control">
+                </div>
+              </div>
+              <h3>Location</h3>
+              <div class="form-group">
+                <label for="StreetNumber">StreetNumber</label>
+                <div><input name="Street_number" id="Street_number" [(ngModel)]="branch.Street_number" type="text"
+                    class="form-control"></div>
+              </div>
+              <div class="form-group">
+                <label for="addressDetails">Address Details</label>
+                <div><input name="addressDetails" id="addressDetails" [(ngModel)]="branch.addressDetails" type="text"
+                    class="form-control"></div>
+              </div>
+              <button (click)="saveInBranches()" type="button" class="add_branch"> Add Another Branch </button>
+            </div>
+          </div>
+          <div class="form_buttons">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="button" (click)="clearForm()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

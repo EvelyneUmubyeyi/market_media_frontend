@@ -1,0 +1,33 @@
+mat-sidenav-container{
+    margin-top: 4rem;
+    margin-left: 2rem;
+    height:500px;
+}
+mat-sidenav{
+    height:100%;
+    width:250px;
+    background-color: #243C74;
+    
+}
+
+ul{
+    padding-left: 3.5rem;
+    padding-top: 2rem;
+    color: rgba(255, 255, 255, 0.877);
+    list-style: none;
+
+    li{
+        padding-bottom: 1rem;
+
+        &:active, &:hover{
+            color:black;
+            cursor: pointer;
+        }
+    }
+
+
+}
+mat-sidenav-content{
+    padding-left: 3rem;
+}
+

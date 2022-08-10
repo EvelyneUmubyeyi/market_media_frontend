@@ -1,0 +1,128 @@
+.business_info {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  margin-bottom: 0.5rem;
+
+  //   div {
+  //     / Background pattern from Toptal Subtle Patterns /
+  //     background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png");
+  //     height: 75px;
+  //     width: 100%;
+  //  }
+}
+
+.form-group {
+  padding-bottom: 1rem;
+}
+
+.contact_info {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.application_form {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-right: 2rem;
+
+}
+
+.reg {
+  margin-left: 2rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.page_title {
+  margin-left: 30%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding-right: 3rem;
+
+  img {
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  button {
+    margin-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: fit-content;
+    align-items: center;
+  }
+}
+
+.registra {
+  display: flex;
+  border: 3px solid;
+  padding-left: 19%;
+  padding-top: 2rem;
+}
+
+h2{
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  color:#243C74;
+}
+
+h3{
+  color:#243C74;
+}
+
+.radio{
+  padding-top: 0;
+  p{
+    padding-top: 0;
+  }
+  .inputs{
+    display: flex;
+    align-items: center;
+    input{
+      width: fit-content;
+    }
+    label{
+      padding-right:1rem;
+    }
+  }
+
+}
+input, textarea{
+  width:250px;
+}
+
+.form_buttons{
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  button{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.4rem;  
+    padding-bottom: 0.4rem;
+    width: fit-content;
+    align-items: center;
+    margin-right: 1rem;
+  }
+}
+
+.add_branch{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  width: fit-content;
+  align-items: center;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,77 @@
+<div class="counter">
+    <p>1-24 of 1000 results</p>
+</div>
+<div class="find_products">
+    <div class="filters">
+        <div class="product">
+            <p>Select Product</p>
+            <select id="products" name="product" ngModel="product" aria-describedby="productId" #productId>
+                <option value= 0 selected="selected">All products</option>
+                <option *ngFor="let sellerProduct of sellerProducts" value="{{sellerProduct.id}}">{{sellerProduct.product}}</option>
+            </select>
+        </div>
+        <div class="category">
+            <p>Select category</p>
+            <select id="categories" name="category" ngModel="category" aria-describedby="categoryId" #categoryId>
+                <option value= 0 selected="selected">All categories</option>
+                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+            </select>
+        </div>
+        <div class="rating">
+            <p>Select Rating</p>
+            <select id="rating" name="rating" ngModel="rating" aria-describedby="rating" #rating>
+                <option value=0 selected ="selected">0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+        </div>
+    </div>
+    <div class="products">
+        <div class="product" *ngFor = "let product of products">
+            <img class="product_photo" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2R1Y3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            alt="product"  height="200px">
+            <div class="deal_type">
+                <ng-template [ngIf]="product.discount>0">
+                    <div class="label">Discount</div>
+                    <p>{{product.discount}}%</p>
+                </ng-template>
+            </div>
+            <div class="deal_type">
+                <ng-template [ngIf]="product.discount==0">
+                    <p class="label">Promotion</p>
+                </ng-template>
+            </div> 
+            <p class="product_name"><strong>{{product.productName}}</strong></p>
+            <div class="prices">
+                <ng-template [ngIf]="product.discount>0">
+                    <p><strong><span class="old_price">Price: {{product.price}}RWF</span></strong></p>
+                    <p><strong>{{product.totalPrice}}RWF</strong></p>
+                </ng-template>
+                <ng-template [ngIf]="product.discount==0">
+                    <p><strong>Price: {{product.totalPrice}}RWF</strong></p>
+                </ng-template>
+            </div>   
+            <div class="reviews">
+                <ul class="rate_stars">
+                    <li *ngFor='let in of counter(product.rating) ;let i = index'>
+                        <i class="bi bi-star-fill"></i>
+                    </li>
+                    <li *ngFor='let in of counter(5-product.rating) ;let i = index'>
+                        <i class="bi bi-star"></i>                
+                    </li>
+                </ul>
+                <p class="number_of_reviews">{{product.number_of_ratings}} reviews</p>
+            </div>
+            <ng-template [ngIf]="product.availabilityStatus=='No'">
+                <p class="availability"><small>Product is out of stock</small></p>
+            </ng-template>
+            <ng-template [ngIf]="product.availabilityStatus=='Yes'">
+                <p class="availability"><small>Product is available</small></p>
+            </ng-template>
+            <a class="see_other_sellers" (click)="setProductId(product.productId)">
+                See other sellers</a>
+        </div>
+    </div>

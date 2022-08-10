@@ -1,10 +1,36 @@
 .slide_show{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    // padding-top: 3rem;
+    // padding-bottom: 7rem;
+    height:450px;
+    // border: 2px solid;
+    width: 80%;
+    // margin-left: 5.5rem;
+    margin: auto;
     .prev,.next{
         height:4rem;
         width: 4rem;
     }
+}
+
+.center{
+    display: flex;
+    align-items: center;
+}
+
+p{
+    font-family: 'Tangerine';
+    font-style: normal;
+    font-weight: 100;
+    font-size:3rem;
+    // border: 2px solid red;
+    width:380px;
+    font-style: italic;
+    // line-height: 128px;
+}
+
+.bi{
+    font-size: 3rem;
 }

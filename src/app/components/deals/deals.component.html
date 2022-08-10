@@ -28,23 +28,27 @@
                     <p class="label">Promotion</p>
                 </ng-template>
             </div>      
+            <p><strong>{{deal.name}}</strong></p>
             <div class="prices">
                 <ng-template [ngIf]="deal.discount>0">
-                    <p class="old_price">{{deal.price}}RWF</p>
+                    <p>Price: <span class="old_price">{{deal.price}}RWF</span></p>
+                    <p>{{deal.totalPrice}}RWF</p>
                 </ng-template>
-                <p>{{deal.totalPrice}}RWF</p>
+                <ng-template [ngIf]="deal.discount==0">
+                    <p>Price: {{deal.totalPrice}}RWF</p>
+                </ng-template>
             </div>   
-            <p><strong>{{deal.name}}</strong></p>
             <p><small>seller: {{deal.sellerName}}</small></p>
-            <!-- <p>{{deal.rating}}</p> -->
-            <ul class="rate_stars">
-                <li *ngFor='let in of counter(deal.rating) ;let i = index'>
-                    <i class="bi bi-star-fill"></i>
-                </li>
-                <li *ngFor='let in of counter(5-deal.rating) ;let i = index'>
-                    <i class="bi bi-star"></i>                
-                </li>
-            </ul>
-            <p>{{deal.number_of_ratings}} reviews</p>
+            <div class="reviews">
+                <ul class="rate_stars">
+                    <li *ngFor='let in of counter(deal.rating) ;let i = index'>
+                        <i class="bi bi-star-fill"></i>
+                    </li>
+                    <li *ngFor='let in of counter(5-deal.rating) ;let i = index'>
+                        <i class="bi bi-star"></i>                
+                    </li>
+                </ul>
+                <p class="number_of_reviews">{{deal.number_of_ratings}} reviews</p>
+            </div>
         </div>
     </div>

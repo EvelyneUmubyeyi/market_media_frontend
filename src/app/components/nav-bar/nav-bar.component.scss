@@ -1,41 +1,222 @@
-nav{
+nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: 2rem;
-    margin-top: 1rem;
-    width: 97%;
-    height:120px;
-    .upper{
+    // padding-right: 2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 2rem;
+    width: 95%;
+    height: 120px;
+
+    // border: 2px solid;
+    .upper {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    #categories,.find_seller{
-        height:30px;
+
+    #categoryId {
+        height: 45px;
+        width: 150px;
     }
-    #product{
-        height:26px;
+
+    .find_seller {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        background-color: #000000;
+        color: white;
+        border-radius: 50px;
+    }
+
+    #productName {
+        height: 45px;
+        border: 2px #5C5151;
+        background-color: #D9D9D9;
+        border-left: 0.5px #918c8ca9 solid;
+        padding-left: 1.5rem;
+        width: 250px;
     }
 
 }
-.logo{
-    width: 70px;
-    height: 70px;
+
+.logo {
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center center;
 }
-.nav_icon{
-    height:2.5rem;
+
+.nav_icon {
+    height: 2.5rem;
 }
-.seller_registration{
+
+.seller_registration {
     padding-right: 1rem;
 }
-.search{
+
+.search {
     display: flex;
 }
-.search_button{
-    height:2.25em;
-    width:2rem;
+
+.search_button {
+    background-color: goldenrod;
+    border: none;
+    height: 45px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    border-radius: 0px 50px 50px 0px;
+}
+
+.account_icons {
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#categoryId {
+    border: 2px #5C5151;
+    background-color: #D9D9D9;
+    border-radius: 50px 0px 0px 50px;
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    // padding-right: 1rem;
+    // height: 300px;
+}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.8rem;
+    top: 19px;
+    right: 13px;
+    position: absolute;
+}
+
+.bi-person-circle {
+    font-size: 2rem;
+}
+
+.bi-cart4 {
+    font-size: 2.5rem;
+}
+
+.icon-wrapper {
+    content: "▼";
+    font-size: 0.8rem;
+    height: 20px;
+    width: 10px;
+    top: 55px;
+    right: 24px;
+    position: absolute;
+    border: 2px solid red;
+}
+
+.links {
+    padding-top: 3rem;
+
+    a {
+        text-decoration: none;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #000000;
+    }
+}
+
+.login {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    background-color: #000000;
+    color: white;
+    border-radius: 50px;
+}
+
+.dropdown{
+    position: relative;
+    cursor: pointer;  
+  }
+
+.dropdown input[type="radio"] {
+    position: absolute;
+    left:-9999px;
+}
+
+.choices label:nth-last-of-type(1) span {
+    border-radius: 0 0 0.2em 0.2em;
+}
+
+.dropdown input[type="radio"]+span {
+    background: #e2dfdf;
+    padding: 0.55em 1em;
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+}
+
+.choices {
+    position: absolute;
+    top: 0;
+    padding-top: 2.6em;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    // transition: all 250ms ease;
+}
+
+.dropdown:hover .choices input[type="radio"]+span {
+    position: relative;
+    top: 0;
+    // transition: all 250ms ease-in-out;
+}
+
+.dropdown:hover input[type="radio"]+span:hover {
+    background: #BBB;
+}
+
+.dropdown:hover input[type="radio"]:checked+span:hover {
+    background: #243C74;
+    color: #fff;
+}
+
+// .dropdown input[type="radio"]:checked+span {
+//     background: #74D68E;
+//     position: absolute;
+//     top: 0em;
+//     border-radius: 0.2em;
+// }
+
+// .dropdown:hover input[type="radio"]:checked+span {
+//     border-radius: 0;
+// }
+
+.dropdown:hover .choices {
+    max-height: 540px;
+    width:160px;
+    right:-49px;
+    // border: 2px solid;
+    // top:40px;
+    // padding-top: 0;
+}
+
+.dropdown:hover .choices .first{
+    padding-top: 1rem;
+    border: 2px solid red;
+
 }

@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+    <mat-sidenav mode = 'side' opened>
+        <ul>
+            <li *ngFor="let data of SideBarData" 
+                (click)="onNav(data)"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}">
+                <a>
+                    {{data.label}}
+                </a>
+            </li>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

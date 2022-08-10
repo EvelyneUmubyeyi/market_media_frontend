@@ -1,0 +1,40 @@
+<table>
+    <tr>
+      <th class="first">No</th>
+      <th>Picture</th>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Measurement Quantity</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Promotion</th>
+      <th>Date Added</th>
+      <th>publish status</th>
+    </tr>
+    <!-- <div class="table-rows"> -->
+        <tr *ngFor="let product of products; let i = index">
+            <td class="first">{{i+1}}</td>
+            <td><img class="seller_photo" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" 
+              alt="Logo"></td>
+            <td>{{product.productName}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.measurementUnit}}</td>
+            <td>{{product.totalPrice}}</td>
+            <td>{{product.discount }}</td>
+            <ng-template [ngIf]="product.promotion!=null">
+                <td>{{product.promotion}}</td>
+            </ng-template>
+            <ng-template [ngIf]="product.promotion == null ">
+                <td>None</td>
+            </ng-template>
+            <td>{{product.dateAdded | date:'medium'}}</td>
+            <ng-template [ngIf]="product.published!='Yes'">
+                <td>No</td>
+            </ng-template>
+            <ng-template [ngIf]="product.published=='Yes'">
+                <td>Yes</td>
+            </ng-template>
+            <!-- <td> {{product.published}}</td> -->
+        </tr>
+    <!-- </div> -->
+  </table>

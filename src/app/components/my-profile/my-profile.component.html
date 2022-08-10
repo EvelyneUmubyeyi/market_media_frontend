@@ -1,0 +1,78 @@
+<form *ngFor="let profile of profiles">
+    <div class="form-group">
+      <div class="container">
+        <h1 class="title">My Profile</h1>
+
+        <label for="Name"><strong>Name</strong></label>
+        <div class="group">
+            <p class="form-control"> {{profile.customerName}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>  
+      </div>
+      <div class="container">
+        <label for="Email"><strong>Email</strong></label>
+        <div class="group">
+            <p class="form-control">{{profile.email}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="group-label">
+        <label for="PhoneNumber"><strong>PhoneNumber</strong></label>
+        <button class="btn btn-primary" ng-click="edit=ture">Add</button>
+        </div>
+
+        <div class="group">
+            <p class="form-control">{{profile.phone}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+      </div>
+      <div class="container">
+        <label for="Address"><strong>Address</strong></label>
+        <label for="Address"><strong>Province</strong></label>
+        <div class="group">
+            <p class="form-control">{{profile.province}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+        
+        <label for="Address"><strong>District</strong></label>
+        <div class="group">
+            <p class="form-control">{{profile.district}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+        
+
+        <label for="Address"><strong>Sector</strong></label>
+        <div class="group">
+            <p class="form-control">{{profile.sector}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+
+        <label for="Address"><strong>Cell</strong></label>
+        <div class="group">
+            <p class="form-control">{{profile.cell}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+
+        <label for="Address"><strong>Village</strong></label>
+        <div class="group">
+            <p class="form-control">{{profile.village}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+
+        <label for="Address"><strong>Street Number</strong></label>
+        <div class="group">
+            <p class="form-control">{{profile.street}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+
+        <label for="Address"><strong>More Address Details (i.e: a well known reference place)</strong></label>
+        <div class="group">
+            <p class="form-control">{{profile.addressDetails}}</p>
+            <button class="btn btn-primary" ng-click="edit=ture">Edit</button>
+        </div>
+
+      </div>
+      </div>
+    </form>
+    

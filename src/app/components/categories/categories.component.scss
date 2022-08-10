@@ -1,9 +1,37 @@
 .categories{
     display:flex;
+    width: fit-content;
+    // justify-content: center;
     flex-wrap: wrap;
-    margin-left: 5rem;
+    margin-left: 8rem;
+    margin-bottom: 3rem;
+    // margin-right: 5rem;
+    // border:2px solid;
     .category-card{
-        margin-right: 2.4rem;
-        margin-bottom: 2.4rem;
+        height: 270px;
+        // margin-left: 1.5rem;
+        margin-right: 3rem;
+        margin-bottom: 3rem;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 25px;
     }
+    .category-card:hover{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+}
+a{
+    color:#243C74;
+}
+a:hover{
+    cursor: pointer;
+}
+.text{
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+img{    
+ border-radius: 25px 25px 0px 0px;
+ 
 }

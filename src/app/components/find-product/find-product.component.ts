@@ -1,5 +1,5 @@
-import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -9,26 +9,51 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class FindProductComponent implements OnInit {
   products:any;
-  categoryId!: number;
-  
+  subCategories:any;
+  categoryId:any;
+  parameters:any;
+  private routeSub: any;
+
   constructor(private httpService: HttpService,
     private route:ActivatedRoute,
+    private router:Router
     ) { }
 
+  ngAfterViewInit(){
+    this.getCategories();
+  }
+
   ngOnInit(): void {
+    this.route.queryParams
+    .subscribe((params:any) =>{
+      this.categoryId = params.data
+    });
+
+    // this.routeSub = this.route.params.subscribe((params: Params) => {
+    //   this.parameters = params
+    // });
+
+   
     this.getProducts(); 
   }
 
-  getProducts(){
-    // this.route.queryParams
-    // .subscribe((params:any) =>{
-    //   this.categoryId = params.data
-    // })
-    this.httpService.emmiter
-    .subscribe((results) => {this.categoryId = results});
+  getCategories(){
+    console.log('Hey'+ this.categoryId);
+    this.httpService.getSubCategories(this.categoryId)
+      .subscribe((response) => {this.subCategories=response});
+  }
 
-    console.log(this.categoryId);
+  getProducts(){
     this.httpService.getProducts(this.categoryId)
     .subscribe((results) => {this.products = results});
   }
+
+  setProductId(productId:number): void {
+    this.router.navigate(['/productSellers'],{queryParams:{data:productId}});
+  }
+
+  setProductIdDescription(productId:number): void {
+    this.router.navigate(['/productDescription'],{queryParams:{data:productId}});
+  }
+  
 }

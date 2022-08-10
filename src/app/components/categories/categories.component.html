@@ -1,7 +1,12 @@
 <section class="categories">
     <div class="category-card" *ngFor="let category of categories">
-        <img class="category-img" src="../../../assets/Images/spacejoy-RqO6kwm4tZY-unsplash.jpg" alt="Category image" height="172px">
-        <h3>{{category.name}}</h3>
-        <a href="/products" (click)="setCategoryId(category.id)">Shop Now</a>
+       <img class="category-img" [src]="category.ImageUrl" alt="Category image" height="150px" width="267px">
+       <!-- <img class="category-img" [src]="'data:image/jpg;base64,'+category?.CategoryImg" alt="Category image" height="150px" width="267px"> -->
+       <div class="text">
+            <h3>{{category.Name}}</h3>
+            <a (click)="setCategoryId(category.id)">Shop Now</a>
+        </div>
     </div>
+    
+    
 </section>

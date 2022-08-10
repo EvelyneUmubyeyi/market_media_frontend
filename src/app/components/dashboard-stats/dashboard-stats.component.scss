@@ -1,0 +1,39 @@
+.container{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    height: 170px;
+    justify-content: center;
+    p{
+      font-size: 1.5rem;
+    }
+    }
+  
+    .stats{
+      padding-top: 0.5rem;
+      font-size: 2rem;
+      color: #243C74;
+    }
+    .container:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    .cards{
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 4rem;
+      margin-top: 2rem;
+    }
+    
+    .form{
+      // padding-top: 1rem;
+      padding-left: 4rem;
+      padding-bottom: 1rem;
+    }
+.categories{
+  color: gray;
+}

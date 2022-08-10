@@ -1,0 +1,16 @@
+.CartItem{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    // margin-left: 4rem;
+    margin-top:2rem;
+  
+}
+.detail{
+    color:grey;
+}
+
+.bi-x{
+    font-size: 2rem;
+}

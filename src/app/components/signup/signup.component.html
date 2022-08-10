@@ -1,0 +1,52 @@
+<div class="Container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="Card">
+          <div class="text-center">
+            <h1>SignUp</h1>
+          </div>
+          <form #saveForm="ngForm" (ngSubmit)="onSubmit(saveForm)" autocomplete="off" >
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Name</label>
+                 <div>
+                <input   [(ngModel)]="mb.Name" type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Emailaddress</label>
+                 <div>
+                <input   [(ngModel)]="mb.Emailaddress"type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+                <div id="emailHelp" class="form-text"></div>
+              </div>
+              <!-- <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div> -->
+              <div class="container">
+                <label> Password </label>
+                <div>
+                <input  [(ngModel)]="mb.Password" [type]="show ? 'text' : 'password'" /> </div>
+                <!-- <button (click)="password()">{{show ? 'Show' : 'Hide'}}</button> -->
+                </div>
+                <div class="container">
+                  <label> ConfirmPassword </label>
+                  <div>
+                  <input   [(ngModel)]="mb.ConfirmPassword"[type]="show ? 'text' : 'password'" /> </div>
+                  <!-- <button (click)="password()">{{show ? 'Show' : 'Hide'}}</button> -->
+                  </div>
+  
+              <button type="submit" class="btn btn-primary" type="submit">SignUp</button>
+              <button class="btn btn-primary" type="button" (click)="clearForm()">Cancel</button>
+  
+          </form>
+          <a style="color: white; margin-top: 2rem;"> Already have an account /
+            <span routerLink="/login">login</span></a>
+         </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  

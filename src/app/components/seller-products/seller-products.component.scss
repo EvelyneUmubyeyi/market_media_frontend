@@ -1,0 +1,61 @@
+
+.find_products{
+    display: flex;
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+.products{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+    .product{
+        margin-right: 2.4rem;
+        margin-bottom: 2.4rem;
+    }
+}
+
+.counter{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.deal_type{
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    .label{
+        color:white;
+        background-color: goldenrod;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        margin-right: 1rem;
+
+
+    }
+}
+.rate_stars{
+    list-style: none;
+    display: flex;
+    color: goldenrod;
+}
+.number_of_reviews{
+    display: none;
+}
+.reviews:hover p{
+    display:inline;
+}
+small{
+    color:gray;
+}
+
+.see_other_sellers{
+    text-decoration: none;
+    color: goldenrod;
+}
+
+a:hover{
+    cursor: pointer;
+}

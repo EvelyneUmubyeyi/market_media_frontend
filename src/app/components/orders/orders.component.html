@@ -1,0 +1,41 @@
+<table>
+    <tr>
+      <th class="first">No</th>
+      <th>Cusromer Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Address</th>
+      <th>Shipping Method</th>
+      <th>Order Date</th>
+      <th>Complete</th>
+
+    </tr>
+    <!-- <div class="table-rows"> -->
+        <tr *ngFor="let order of orders; let i = index">
+            <td class="first">{{i+1}}</td>
+            <td>{{order.customerName}}</td>
+            <td> {{order.email}}</td>
+            <td>{{order.phone}}</td>
+            <td>{{order.productName}}</td>
+            <td>{{order.quantity}}</td>
+            <td class="address"><p class="location">{{order.province}},{{order.district}},</p>
+                <!-- <p class="location">{{order.district}},</p> -->
+                <p class="location">{{order.sector}},{{order.cell}},</p>
+                <!-- <p class="location">{{order.cell}},</p> -->
+                <p class="location">{{order.village}},{{order.street}},</p>
+                <!-- <p class="location">{{order.street}},</p> -->
+                <p class="location">{{order.addressDetails}}</p>
+            </td>
+            <td>{{order.shippingMethod}}</td>
+            <td>{{order.orderDate}}</td>
+            <ng-template [ngIf]="order.completed=='Yes'">
+                <td><button class="toogle-order" (click)="toogleComplete()"><i class="{{complete}}"></i></button></td>
+            </ng-template>
+            <ng-template [ngIf]="order.completed!='Yes'">
+                <td><button class="toogle-order" (click)="toogleIncomplete()"><i class="{{incomplete}}"></i></button></td>
+            </ng-template>
+        </tr>
+    <!-- </div> -->
+  </table>
