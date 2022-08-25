@@ -1,3 +1,8 @@
+// .cont1{
+//   background-color: #CED3DF;
+//   border: 2px solid;
+// }
+
 .Card
 {
   margin-top: 10px;
@@ -8,7 +13,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgb(43, 43, 65) 100%;
+  background: #243C74;
   background: linear-gradient(90deg, rgb(43, 43, 65) 100%);
 }
 .Card h1{
@@ -17,4 +22,17 @@
 
 label{
   color: #fff;
+}
+
+.group{
+  padding-bottom: 0.5rem;
+}
+
+.title{
+  padding-bottom: 1rem;
+}
+
+button{
+  margin-top: 0.7rem;
+  margin-bottom: 1.5rem;
 }

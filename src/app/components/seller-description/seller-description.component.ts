@@ -37,8 +37,8 @@ export class SellerDescriptionComponent implements OnInit {
     .subscribe((params:any) =>{
       this.sellerId = params.data
     })
-    console.log(this.sellerId);
-    this.httpService.getSellerDetail(this.sellerId,0,0)
+
+    this.httpService.getSellerDetails(this.sellerId)
     .subscribe((xy) => {this.sellers = xy});
   }
   setSellerId(sellerId:number): void {

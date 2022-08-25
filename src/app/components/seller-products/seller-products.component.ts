@@ -16,14 +16,22 @@ export class SellerProductsComponent implements OnInit {
   slrs:any;
   sellerId=0;
   
+  counterRound(i: number) {
+    return new Array(Math.floor(i));
+  }
+
+  counter(i: number) {
+    return new Array(i);
+  }
+
+  round(i: number){
+    return (Math.ceil(i))
+  }
+
   @ViewChild('productId') productId: any; 
   @ViewChild('categoryId') categoryId: any; 
   @ViewChild('rating') rating: any; 
   
-  counter(i: number) {
-    return new Array(i);
-}
-
   constructor(private httpService: HttpService,    
     private route:ActivatedRoute,
     private router:Router

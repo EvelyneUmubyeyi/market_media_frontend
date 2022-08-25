@@ -22,8 +22,6 @@ export class CartComponent implements OnInit {
 
     this.httpService.getCartItems()
         .subscribe((xy) => this.items = xy);
-
-        console.log(this.items);
    }
 
 }

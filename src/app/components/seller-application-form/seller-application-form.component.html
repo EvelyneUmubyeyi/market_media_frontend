@@ -3,8 +3,10 @@
   <div class="registra">
     <div class="header">
       <img [src]="url" title="Profile Picture" class="logo" />
-      <input type="file" id="img" style="display:none" accept="image/*" (change)="onSelect($event)" />
-      <button>Upload Image</button>
+      <input type="file"
+      id="file"
+      (change)="handleFileInput($event)">
+      <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
     </div>
 
     <div class="text">
@@ -14,18 +16,18 @@
         <div class="form-group">
           <label for="Business Name">Business Name</label>
           <div><input name="BusinessName" id="BusinessName" [(ngModel)]="registra.BusinessName" type="text"
-              class="form-control"> </div>
+              class="form-control" required> </div>
         </div>
 
         <div class="form-group">
           <div for="BusinessDescription">BusinessDescription</div>
-          <textarea rows="4" [(ngModel)]="registra.BusinessDescription" class="form-control"></textarea>
+          <textarea rows="4" [(ngModel)]="registra.BusinessDescription" class="form-control" required></textarea>
         </div>
 
         <div class="form-group">
           <label for="TinNumber">Tin Number</label>
-          <div> <input name="TinNumber" id="TinNumber" [(ngModel)]="registra.TinNumber" type="text"
-              class="form-control"> </div>
+          <div> <input name="TinNumber" id="TinNumber" [(ngModel)]="registra.Tin" type="text"
+              class="form-control" required> </div>
         </div>
 
         <div class="form-group">
@@ -41,7 +43,7 @@
         </div>
         <div class="form-group">
           <label for="SocialMedia">SocialMedia Link (i.e: social media account where you are highly responsive)</label>
-          <div><input name="SocialMedia" id="SocialMedia" [(ngModel)]="registra.SocialMedia" type="text"
+          <div><input name="SocialMedia" id="SocialMedia" [(ngModel)]="registra.Socialmedia" type="text"
               class="form-control"> </div>
         </div>
         <h2>BUSINESS CONTACTS</h2>
@@ -88,16 +90,16 @@
             </select>
             <div class="form-group">
               <label for="Village">Village</label>
-              <select name="Village" id="Village" [(ngModel)]="headquarter.villageId" #villageId>
-                <option value=0 selected = "selected">Select Village</option>
+              <select name="Village" id="Village" [(ngModel)]="headquarter.villageId" #villageId required>
+                <option value=0 selected="selected">Select Village</option>
                 <option *ngFor="let village of villages" value="{{village.Id}}" class="form-control">{{village.Name}}
                 </option>
               </select>
             </div>
             <div class="form-group">
               <label for="StreetNumber">StreetNumber</label>
-              <div><input name="StreetNumber" id="StreetNumber" [(ngModel)]="headquarter.StreetNumber" type="text"
-                  class="form-control"></div>
+              <div><input name="StreetNumber" id="StreetNumber" [(ngModel)]="headquarter.Street_number" type="text"
+                  class="form-control" required></div>
             </div>
             <div class="form-group">
               <label for="Details">Address Details</label>
@@ -137,6 +139,48 @@
               </div>
               <h3>Location</h3>
               <div class="form-group">
+                <label for="Province">Province</label>
+                <select name="Province" id="Province" #provinceId (change)="getDistricts($event)">
+                  <option value=0>Select Province</option>
+                  <option *ngFor="let province of provinces" value="{{province.Id}}" class="form-control">
+                    {{province.Name}}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="District">District</label>
+                <select name="District" id="District" #districtId (change)="getSectors($event)">
+                  <option value=0>Select District</option>
+                  <option *ngFor="let district of districts" value="{{district.Id}}" class="form-control">
+                    {{district.Name}}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="Sector">Sector</label>
+                <select name="Sector" id="Sector" #sectorId (change)="getCells($event)">
+                  <option value=0>Select Sector</option>
+                  <option *ngFor="let sector of sectors" value="{{sector.Id}}" class="form-control">{{sector.Name}}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="Cell">Cell</label>
+                <select name="Cell" id="Cell" #cellId (change)="getVillages($event)">
+                  <option value=0>Select Cell</option>
+                  <option *ngFor="let cell of cells" value="{{cell.Id}}" class="form-control">{{cell.Name}}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="Village">Village</label>
+                <select name="Village" id="Village" [(ngModel)]="branch.villageId" #villageId>
+                  <option value=0 selected="selected">Select Village</option>
+                  <option *ngFor="let village of villages" value="{{village.Id}}" class="form-control">{{village.Name}}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="StreetNumber">StreetNumber</label>
                 <div><input name="Street_number" id="Street_number" [(ngModel)]="branch.Street_number" type="text"
                     class="form-control"></div>
@@ -150,7 +194,7 @@
             </div>
           </div>
           <div class="form_buttons">
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit" [disabled]="saveForm.invalid">Submit</button>
             <button class="btn btn-primary" type="button" (click)="clearForm()">Cancel</button>
           </div>
         </div>

@@ -29,6 +29,8 @@ import { DashboardStatsComponent } from './components/dashboard-stats/dashboard-
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AuthGuard } from './guards/auth.guard';
+import { StockItemComponent } from './components/stock-item/stock-item.component';
+import { Login2Component } from './components/login2/login2.component';
 
 const routes: Routes = [
   {
@@ -42,7 +44,7 @@ const routes: Routes = [
   {
     path: 'findSeller/map', 
     component: MapSellersComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'products', 
@@ -51,22 +53,22 @@ const routes: Routes = [
   {
     path: 'deals', 
     component: DealsComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'sellerDescription', 
     component: SellerDescriptionComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'sellerProducts', 
     component: SellerProductsComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'productSellers', 
     component: ProductSellersComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'productDescription', 
@@ -80,7 +82,7 @@ const routes: Routes = [
       {path:'MyCart', component:CartComponent},
       {path:'MyOrders', component:MyOrdersComponent},
    ],
-   canActivate:[AuthGuard]
+  //  canActivate:[AuthGuard]
   },
   {
     path: 'adminDashboard', component: AdminDashboardComponent,
@@ -88,17 +90,17 @@ const routes: Routes = [
       {path:'SellerApplications', component:SellerApplicationsComponent},
       {path:'SellerProducts', component:SellersListComponent},
    ],
-   canActivate:[AuthGuard]
+  //  canActivate:[AuthGuard]
   },
   {
     path: 'sellerApplication', 
     component: ApplicationComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'sellerProductsAdmin', 
     component: ProductsListComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: 'SellerDashboard', component: SellerDashboardComponent,
@@ -108,8 +110,10 @@ const routes: Routes = [
       {path:'MyStock', component:StockComponent},
       {path:'MyOrders', component:OrdersComponent},
       {path:'Reviews', component:SellerReviewsComponent},
+      {path:'AddStockItem', component: StockItemComponent},
+      {path:'EditStockItem', component: StockItemComponent},
    ],
-   canActivate:[AuthGuard]
+  //  canActivate:[AuthGuard]
   },
   {
     path: 'login', 
@@ -122,7 +126,12 @@ const routes: Routes = [
   {
     path: 'sellerRegistration', 
     component: SellerApplicationFormComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
+  },
+  {
+    path: 'login2', 
+    component: Login2Component,
+    // canActivate:[AuthGuard]
   },
 ];
 

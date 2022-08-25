@@ -1,0 +1,90 @@
+<div class="add_item">
+    <h1>Product Details</h1>
+    <form #saveForm="ngForm" (ngSubmit)="onSubmit(saveForm)" autocomplete="off">
+        <div class="header">
+            <img [src]="url" class="uploaded_img"><br>
+            <input type="file" id="file" (change)="handleFileInput($event)">
+            <label for="file" id="upload" class="button">Upload Product Image</label>
+        </div>
+        <div class="body">
+            <!-- <div class="form-group">
+                <label>Type to search product name, select new if you can't find it: </label>
+                <input type="text" name="city" list="products" >
+                <datalist id="products">
+                    <option *ngFor="let product of products" data-value="product.Id">{{product.Name}}</option>
+                    <option>New</option>
+                </datalist>
+                <input type="hidden" name="answer" id="answerInput-hidden">
+            </div> -->
+            <div class="form-group">
+                <label>Product Name:</label>
+                <input name="name" type="text" [(ngModel)]="item.Name" required />
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <textarea rows="4" [(ngModel)]="item.Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Manufacturer: </label>
+                <input name="name" type="text" list="manufacturerss" [(ngModel)]="item.ManufacturerId" #manufacturer />
+                <datalist id="manufacturerss">
+                    <option *ngFor="let manufacturer of manufacturers" data-value="{{manufacturer.ManufacturerId}}">
+                        {{manufacturer.ManufacturerName}}</option>
+                    <!-- <option *ngFor="let manufacturer of manufacturers" data-value="manufacturer.ManufacturerId" value="manufacturer.ManufacturerName"> -->
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label>Category:</label>
+                <!-- <select id="categoryId" name="categoryId" #categoryId [(ngModel)]="item.categoryId">
+                    <option value=0 disabled selected> -- Select your option --</option>
+                    <option *ngFor="let category of categories" value="{{category.id}}">{{category.Name}}</option>
+                </select> -->
+                <select name="categoryId" id="categoryId" [(ngModel)]="item.categoryId" #categoryId required>
+                    <option value=0 selected="selected"> -- Select your option --</option>
+                    <option *ngFor="let category of categories" value="{{category.Id}}" class="form-control">
+                        {{category.Name}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>What unit is used in measuring your product ex:pieces, liters, etc: </label>
+                <input name="name" type="text" [(ngModel)]="item.MeasurementUnit" required />
+            </div>
+            <div class="form-group">
+                <label>What is the quantity/pieces in one package if applicable: </label>
+                <input name="name" type="text" [(ngModel)]="item.quantityPerUnit" />
+            </div>
+            <div class="form-group">
+                <label>Price per unit (RWF): </label>
+                <input name="name" type="number" [(ngModel)]="item.price" required />
+            </div>
+            <div class="form-group">
+                <label>Quantity in stock: </label>
+                <input name="name" type="number" [(ngModel)]="item.quantity" />
+            </div>
+        </div>
+        <div class="bottom_buttons">
+            <button class="btn-bottom btn-primary button" type="submit" [disabled]="saveForm.invalid"
+                (click)="publish('No')">Save</button>
+            <button class="btn-bottom btn-primary button" type="submit" [disabled]="saveForm.invalid"
+                (click)="publish('Yes')">Save & publish</button>
+            <button class="btn-bottom btn-primary button" type="button" (click)="clearForm()">Cancel</button>
+        </div>
+    </form>
+
+    <app-popup [(visible)]="openPopup" class="popUp_dialog">
+        <a (click)="closePopup()" class="closedialog_btn"><i class="bi bi-x"></i>
+        </a>
+        <ng-template [ngIf]="success">
+            <div class="content">
+                <p>Successfully added product to stock</p>
+                <i class="bi bi-check-lg"></i>
+            </div>
+        </ng-template>
+        <ng-template [ngIf]="!success">
+            <div class="content">
+                <p>Could not add product to stock try again</p>
+                <i class="bi bi-x-octagon-fill"></i>            
+            </div>
+        </ng-template>
+    </app-popup>

@@ -7,7 +7,7 @@
             <p>Select category</p>
             <select id="categories" name="category" ngModel="category" aria-describedby="categoryId" #categoryId>
                 <option value= 0 selected="selected">All categories</option>
-                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                <option *ngFor="let category of categories" value="{{category.id}}">{{category.Name}}</option>
         </select>
         </div>
         <button class="filter_button" (click)="getDeals()">Filter</button>

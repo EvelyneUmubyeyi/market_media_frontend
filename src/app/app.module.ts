@@ -51,6 +51,10 @@ import { DashboardStatsComponent } from './components/dashboard-stats/dashboard-
 import { SellerApplicationFormComponent } from './components/seller-application-form/seller-application-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { StockItemComponent } from './components/stock-item/stock-item.component';
+import { Login2Component } from './components/login2/login2.component';
+import { PopupComponent } from './components/popup/popup.component';
+
 
 @NgModule({
   declarations: [
@@ -89,7 +93,10 @@ import { SignupComponent } from './components/signup/signup.component';
     SellerApplicationFormComponent,
     LoginComponent,
     SafePipe,
-    SignupComponent
+    SignupComponent,
+    StockItemComponent,
+    Login2Component,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

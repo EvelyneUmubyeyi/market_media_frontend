@@ -14,8 +14,9 @@
         </form>
         <button class="find_seller" routerLink="/findSeller">Find Seller</button>
         <!-- <img class="cart nav_icon" src="../../../assets/Images/Shopping Cart With Money.svg" alt="Cart"> -->
-        <i class="bi bi-cart4"></i>
-        <div class="account account_icons"  *ngIf="authenticationService.isAuthenticated">
+        <i class="bi bi-cart4" routerLink="/MyAccount/MyCart"></i>
+        <div class="account account_icons" >
+         <!-- *ngIf="authenticationService.isAuthenticated" -->
             <i class="bi bi-person-circle" routerLink="MyAccount/MyProfile"></i>
             <div class="dropdown">
                 <i class="bi bi-caret-down-fill"></i>
@@ -29,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <button class="login" routerLink="/login" *ngIf="!authenticationService.isAuthenticated">Login</button>
+        <!-- <button class="login" routerLink="/login" *ngIf="!authenticationService.isAuthenticated">Login</button> -->
     </div>
     <div class="links">
         <a class="seller_registration" routerLink="/sellerRegistration">Seller Registration</a>

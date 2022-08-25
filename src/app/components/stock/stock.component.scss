@@ -41,3 +41,142 @@ tr{
 .first{
     padding-left: 2rem;
 }
+
+.button-18 {
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    margin-bottom: 1rem;
+  }
+  
+  .button-18:hover,
+  .button-18:focus { 
+    background-color: #16437E;
+    color: #ffffff;
+  }
+  
+  .button-18:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+  }
+  
+  .button-18:disabled { 
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+  }
+
+  .add_item{
+    width:95%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .more{
+    padding-right: 1rem;
+    padding-left: 0;
+  }
+
+  .bi-three-dots-vertical{
+  }
+
+  .publish_status{
+    padding-right: 0;
+    text-align: left;
+  }
+.publish_status_data{
+    padding-right: 0;
+    text-align: center;
+}
+
+.more_options{
+    position: relative;
+    cursor: pointer;  
+  }
+
+.choices {
+    position: absolute;
+    top: 0;
+    left: -45%;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    border-radius: 0.2rem;
+    display: none;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .15);
+    button{
+        background-color: #ffffff;
+        border: none;
+        display: block;
+        width: 100%;
+        padding: .375rem .5rem;
+        font-size: 12px;
+        transition: all 250ms ease-in-out;
+        text-align: left;
+        &:hover{
+          background-color: #BBB;
+        }
+    }
+}
+
+.more_options:hover .choices {
+    max-height: 400px;
+    min-width:max-content;
+    top:100%;
+    display: inline;
+    z-index: 2;
+}
+
+.more_options:hover .choices .first{
+    padding-top: 0.5rem;
+    border-top: 1px solid;
+}
+
+.more_options{
+    height: 100%;
+    text-align: left;
+}
+.more_options:hover .choices .last{
+    padding-bottom: 0.3rem;
+}
+
+.toogle-order{
+  border:none;
+  background-color: transparent;
+  &:hover{
+      cursor: pointer;
+  }
+}
+.bi-x-circle-fill{
+  color:#ED1C24;
+  font-size: 2rem;
+}
+
+.bi-check2-circle{
+  color:#50C878;
+  font-size: 2rem;
+}

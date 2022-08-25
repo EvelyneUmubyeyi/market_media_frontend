@@ -61,6 +61,11 @@ export class HttpService {
   getSellerDetail(sellerId?:number,categoryId?:number,rating?:number,productId:number=0): Observable<any[]> {
    return this.http.get<any[]>(this.url + 'Seller/' + sellerId + '/' + categoryId + '/' + rating + '/' + productId, this.httpOptions);
   }
+
+  getSellerDetails(sellerId:number): Observable<any[]> {
+    return this.http.get<any[]>(this.url + 'Seller/sellerDetails/' + sellerId, this.httpOptions);
+   }
+
   getProducts(categoryId?:number,productId?:number): Observable<any[]> {
     return this.http.get<any[]>(this.url + 'Product/ByCategory/'+ categoryId , this.httpOptions);
   }
@@ -82,7 +87,7 @@ export class HttpService {
   }
 
   getSellerProducts(productId?:number, sellerId?:number, categoryId?:number,rating?:number): Observable<any[]> {
-    return this.http.get<any[]>(this.url + 'ProductSeller/BySeller/0/1/0/0', this.httpOptions);
+    return this.http.get<any[]>(this.url + 'ProductSeller/SellerStock/0/1/0/0', this.httpOptions);
   }
 
   searchProduct(productId?:number,categoryId?:number,rating?:number): Observable<any[]> {
@@ -182,4 +187,13 @@ export class HttpService {
   getVillages(cellId:number):Observable<any[]> {
     return this.http.get<any[]>(this.url+'Village/ByCell/'+cellId, this.httpOptions);
   }
+
+  getProductsInCategory(categoryId:number):Observable<any[]> {
+    return this.http.get<any[]>(this.url+'Product/InCategory/'+categoryId, this.httpOptions);
+  }
+
+  getManufacturers():Observable<any[]> {
+    return this.http.get<any[]>(this.url+'Manufacturer', this.httpOptions);
+  }
+  
 }

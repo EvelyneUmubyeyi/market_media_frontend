@@ -1,36 +1,39 @@
-<div class="Container">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="Card">
-				<div class="text-center">
-					<h1>Login</h1>
+<div class="cont1">
+	<!-- <div class="Container">
+		<div class="row">
+			<div class="col-md-6"> -->
+				<div class="Card">
+					<div class="text-center">
+						<h1 class="title">Login</h1>
+					</div>
+					<form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)" autocomplete="off">
+						<div class="mb-3 group">
+							<label for="exampleInputEmail1" class="form-label">Emailaddress</label>
+							<div>
+								<input [(ngModel)]="user.email" type="email" class="form-control"
+									id="exampleInputEmail1" name="email" required aria-describedby="emailHelp">
+							</div>
+							<div id="emailHelp" class="form-text"></div>
+						</div>
+						<div class="container group">
+							<label> Password </label>
+							<div>
+								<input [(ngModel)]="user.password" [type]=" show ? 'text' : 'password'" name="password"
+									required />
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary" type="submit">Login</button>
+						<div class="alert alert-danger" role="alert" *ngIf="isFormValid">
+							Please fill all fields.
+						</div>
+						<div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+							Invalid user or password.
+						</div>
+					</form>
+					<a style="color: white; margin-top: 10px;"> Need an account /
+						<span routerLink="/Signup">Signup now</span></a>
 				</div>
-				<form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)" autocomplete="off">
-					<div class="mb-3">
-						<label for="exampleInputEmail1" class="form-label">Emailaddress</label>
-						<div>
-							<input [(ngModel)]="user.email" type="email" class="form-control"
-								id="exampleInputEmail1" name="email" required aria-describedby="emailHelp">
-						</div>
-						<div id="emailHelp" class="form-text"></div>
-					</div>
-					<div class="container">
-						<label> Password </label>
-						<div>
-							<input [(ngModel)]="user.password" [type]=" show ? 'text' : 'password'" name="password" required/>
-						</div>
-					</div>
-					<button type="submit" class="btn btn-primary" type="submit">Login</button>
-					<div class="alert alert-danger" role="alert" *ngIf="isFormValid">
-						Please fill all fields.
-					</div>
-					<div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
-						Invalid user or password.
-					</div>
-				</form>
-				<a style="color: white; margin-top: 10px;"> Need an account /
-					<span routerLink="/Signup">Signup now</span></a>
-			</div>
+			<!-- </div>
 		</div>
-	</div>
+	</div> -->
 </div>

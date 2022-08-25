@@ -44,7 +44,7 @@ export class FindProductComponent implements OnInit {
   }
 
   getProducts(){
-    this.httpService.getProducts(this.categoryId)
+    this.httpService.getProductsInCategory(this.categoryId)
     .subscribe((results) => {this.products = results});
   }
 
