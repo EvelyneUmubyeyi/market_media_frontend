@@ -31,6 +31,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AuthGuard } from './guards/auth.guard';
 import { StockItemComponent } from './components/stock-item/stock-item.component';
 import { Login2Component } from './components/login2/login2.component';
+import { AddDealComponent } from './components/add-deal/add-deal.component';
+import { EditStockItemComponent } from './edit-stock-item/edit-stock-item.component';
 
 const routes: Routes = [
   {
@@ -111,7 +113,8 @@ const routes: Routes = [
       {path:'MyOrders', component:OrdersComponent},
       {path:'Reviews', component:SellerReviewsComponent},
       {path:'AddStockItem', component: StockItemComponent},
-      {path:'EditStockItem', component: StockItemComponent},
+      {path:'EditStockItem', component: EditStockItemComponent},
+      {path:'PutOnDeal', component: AddDealComponent},
    ],
   //  canActivate:[AuthGuard]
   },

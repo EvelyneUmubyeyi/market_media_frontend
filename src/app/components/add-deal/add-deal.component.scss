@@ -1,0 +1,169 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Deal {
+    width: fit-content;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    margin-left: 5rem;
+}
+
+form {
+    margin-left: 5rem;
+    margin-top: 2rem;
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+
+        label {
+            margin-bottom: 0.5rem;
+        }
+
+        select,
+        input,
+        textarea {
+            padding: 10px;
+            width: 100%;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+        }
+    }
+}
+
+.button {
+    margin-left: auto;
+    margin-top: 1.5rem;
+}
+
+.btns-group {
+    button {
+        margin-right: 1rem;
+    }
+}
+
+.form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.progressBar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5rem;
+    margin-bottom: 4rem;
+    counter-reset: step;
+}
+
+.progressBar::before,
+.progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+}
+
+.progress {
+    background-color: #0A66C2;
+    width: 0%;
+    transition: 0.3s ease-in-out;
+}
+
+.progressStep {
+    width: 35px;
+    height: 35px;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.progressStep::before {
+    counter-increment: step;
+    content: counter(step);
+}
+
+.progressStep::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: .80rem;
+    color: #666666;
+}
+
+.progressStep.active {
+    background-color: #0A66C2;
+    color: #f3f3f3;
+}
+
+@keyframes animate {
+    from {
+        transform: scale(1, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+.popUp_dialog {
+    .closedialog_btn {
+        position: absolute;
+        top: -24px;
+        right: -24px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #fff;
+        font-size: 0.85rem;
+        font-weight: 600;
+        font-family: "Arial", sans-serif;
+        color: var(--maincl);
+        text-align: center;
+        line-height: 25px;
+        opacity: 0.5;
+        transition: opacity 200ms ease-in-out;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content p {
+    padding-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.bi-check-lg {
+    color: #50C878;
+    font-size: 3rem;
+}
+
+.bi-x-octagon-fill {
+    color: #ED1C24;
+    font-size: 3rem;
+}

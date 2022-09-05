@@ -1,3 +1,4 @@
+import { CarouselModule } from './components/carousel/carousel.module';
 import { SafePipe } from './pipes/safe-url.pipe';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -54,6 +55,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { StockItemComponent } from './components/stock-item/stock-item.component';
 import { Login2Component } from './components/login2/login2.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { AddDealComponent } from './components/add-deal/add-deal.component';
+import { EditStockItemComponent } from './edit-stock-item/edit-stock-item.component';
 
 
 @NgModule({
@@ -96,7 +99,9 @@ import { PopupComponent } from './components/popup/popup.component';
     SignupComponent,
     StockItemComponent,
     Login2Component,
-    PopupComponent
+    PopupComponent,
+    AddDealComponent,
+    EditStockItemComponent
   ],
   imports: [
     BrowserModule,
@@ -111,6 +116,7 @@ import { PopupComponent } from './components/popup/popup.component';
     MatIconModule,
     MatSidenavModule,
     CommonModule,
+    CarouselModule,
   ],
   providers: [
     AppConfig,

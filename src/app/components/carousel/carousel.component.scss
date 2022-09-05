@@ -1,0 +1,24 @@
+.carousel-container{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px #dce1e1;
+}
+
+.carousel-container img{
+    display: none;
+    border-radius: 15px;
+}
+
+.carousel-container img.image-Active{
+    display: block;
+    width:100%;
+    height:450px;
+}
+
+.fade{
+    animation-name: fade;
+    // animation-duration: ;
+}

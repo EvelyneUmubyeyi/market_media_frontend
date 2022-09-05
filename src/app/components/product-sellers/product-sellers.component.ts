@@ -55,7 +55,8 @@ export class ProductSellersComponent implements OnInit {
 
   getProductSellers(){
       this.httpService.getProductSellers(this.productId, parseInt(this.sellerId.nativeElement.value),parseInt(this.rating.nativeElement.value))
-      .subscribe((xy) => {this.sellers=xy});
+      // .subscribe((xy) => {this.sellers=xy});
+      .subscribe((xy) => {console.log(xy)});
       // console.log(this.sellers);
   }
 

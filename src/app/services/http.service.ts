@@ -75,6 +75,9 @@ export class HttpService {
   }
 
   getProductSellers(productId?:number, sellerId?:number, rating?:number ): Observable<any[]> {
+    console.log(productId);
+    console.log(sellerId);
+    console.log(rating);
     return this.http.get<any[]>(this.url + 'ProductSeller/SellersOfProduct/' + productId + '/' + sellerId + '/' + rating, this.httpOptions);
   }
   getProductsFilter(sellerId?:number): Observable<any[]> {

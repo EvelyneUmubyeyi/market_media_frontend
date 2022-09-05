@@ -1,0 +1,82 @@
+<div class="Deal">
+    <h1>Add Product On Deal</h1>
+    <div class="progressBar">
+        <div class="progress" id="progress">
+
+        </div>
+        <div class="progressStep active" data-title="Type" id="progressOne" [ngClass]="{'active' : stepOne}"></div>
+        <div class="progressStep" data-title="Details" id="progressTwo" [ngClass]="{'active' : stepTwo}"></div>
+        <div class="progressStep" data-title="Duration" id="progressThree" [ngClass]="{'active' : stepThree}"></div>
+    </div>
+    <form #saveForm="ngForm" autocomplete="off">
+        <div class="form-step active" id="one" [ngClass]="{'active' : pageOne}">
+            <div class="form-group">
+                <label>Select type of deal:</label>
+                <select name="deal" id="deal" required>
+                    <option value=0 selected="selected"> -- Select your option --</option>
+                    <option value='Discount'>Discount</option>
+                    <option value='Promotion'>Promotion</option>
+                </select>
+            </div>
+            <button class="button next" (click)="next(2)">Next</button>
+        </div>
+
+        <div class="form-step" id="two" [ngClass]="{'active' : pageTwo}">
+            <ng-template [ngIf]="dealType == 'Discount'">
+                <div class="form-group">
+                    <label>Enter discount rate: </label>
+                    <input type="number" name="discount" id="rate" [(ngModel)]="discount.Discount">
+                </div>
+                <div class="form-group">
+                    <label>Description: </label>
+                    <textarea type="text" name="description" id="description" [(ngModel)]="discount.Description"></textarea>
+                </div>
+                <div class="btns-group">
+                    <button class="button prev" (click)="back(1)">Back</button>
+                    <button class="button next" (click)="next(3)">Next</button>
+                </div>
+            </ng-template>
+            <ng-template [ngIf]="dealType == 'Promotion'">
+                <div class="form-group">
+                    <label>Describe Promotion </label>
+                    <textarea type="text" name="description" id="promotion" [(ngModel)]="promotion.Promotion"></textarea>
+                </div>
+                <div class="btns-group">
+                    <button class="button prev" (click)="back(1)">Back</button>
+                    <button class="button next" (click)="next(3)">Next</button>
+                </div>
+            </ng-template>
+        </div>
+        <div class="form-step" id="three" [ngClass]="{'active' : pageThree}">
+            <div class="form-group">
+                <label>Start Date: </label>
+                <input type="datetime-local" name="start_date" [(ngModel)]="startDate">
+            </div>
+            <div class="form-group">
+                <label>End Date: </label>
+                <input type="datetime-local" name="end_date" [(ngModel)]="endDate">
+            </div>
+            <div class="btns-group">
+                <button class="button prev" (click)="back(2)">Back</button>
+                <button class="button sub" type="submit" (click)="onSubmit(saveForm)">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<app-popup [(visible)]="openPopup" class="popUp_dialog">
+    <a (click)="closePopup()" class="closedialog_btn"><i class="bi bi-x"></i>
+    </a>
+    <ng-template [ngIf]="success">
+        <div class="content">
+            <p>Successfully put product on deal</p>
+            <i class="bi bi-check-lg"></i>
+        </div>
+    </ng-template>
+    <ng-template [ngIf]="!success">
+        <div class="content">
+            <p>Could not put product on deal</p>
+            <i class="bi bi-x-octagon-fill"></i>            
+        </div>
+    </ng-template>
+</app-popup>

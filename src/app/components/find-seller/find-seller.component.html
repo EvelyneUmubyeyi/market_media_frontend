@@ -9,14 +9,14 @@
                 <p>Select seller name</p>
                 <select id="seller_names" name="name" ngModel="name" aria-describedby="sellerId" #sellerId>
                     <option value=0 selected="selected">All</option>
-                    <option *ngFor="let slr of slrs" value="{{slr.id}}">{{slr.name}}</option>
+                    <option *ngFor="let slr of slrs" value="{{slr.Id}}">{{slr.Name}}</option>
                 </select>
             </div>
             <div class="category group">
                 <p>Select category</p>
                 <select id="categories" name="category" ngModel="category" aria-describedby="categoryId" #categoryId>
                     <option value= 0 selected="selected">All categories</option>
-                    <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                    <option *ngFor="let category of categories" value="{{category.Id}}">{{category.Name}}</option>
                 </select>
             </div>
             <div class="rating group">
@@ -36,7 +36,7 @@
     </div>
     <div class="sellers">
         <div class="seller" *ngFor="let seller of sellers" routerLink="/sellerDescription" (click)="setSellerId(seller.sellerId)">
-            <img class="seller_photo" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMGljb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" 
+            <img class="seller_photo" [src]="seller.ImageUrl" 
             alt="Logo"  height="200px">
             <div class="seller_description">
                 <p><strong>{{seller.Name}}</strong></p>

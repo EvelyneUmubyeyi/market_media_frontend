@@ -64,6 +64,33 @@ export class SellerService {
     );
   }
 
+  editStockItem(formData:FormData, productSellerId:number): Observable<any> {
+    return this.http.put<any>(
+      this.url + 'ProductSeller/StockItem/'+ productSellerId, formData, this.httpFormDataOption
+    );
+  }
+
+
+  AddPromotion(promotion:any): Observable<any> {
+    return this.http.post<any>(
+      this.url + 'Promotion', promotion, this.httpFormDataOption
+    );
+  }
+
+  AddDiscount(discount:any): Observable<any> {
+    return this.http.post<any>(
+      this.url + 'Discount', discount, this.httpFormDataOption
+    );
+  }
+
+  ProductInfo(productSellerId:number): Observable<any> {
+    return this.http.get<any>(this.url + 'Product/EditStockItem/' + productSellerId, this.httpOptions);
+  }
+
+  DeleteProduct(productSellerId:number): Observable<any> {
+    return this.http.delete<any>(this.url + 'ProductSeller/' + productSellerId, this.httpOptions);
+  }
+
 }
 
 

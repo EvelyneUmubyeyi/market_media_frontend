@@ -9,50 +9,48 @@
         <div class="body">
             <div class="form-group">
                 <label>Product Name:</label>
-                <input name="name" type="text" [(ngModel)]="item.Name" required />
+                <input name="name" id="ProdName" type="text" [(ngModel)]="updates.productName" />
             </div>
             <div class="form-group">
                 <label>Description:</label>
-                <textarea rows="4" [(ngModel)]="item.Description"></textarea>
+                <textarea rows="4" type="text" id="description" [(ngModel)]="updates.productDescription"></textarea>
             </div>
             <div class="form-group">
                 <label>Manufacturer: </label>
-                <input name="name" type="text" list="manufacturerss" [(ngModel)]="item.ManufacturerId" #manufacturer />
+                <input name="manufacturer" type="text" list="manufacturerss" id="manufacturer" [(ngModel)]="updates.manufacturerId"
+                    #manufacturer />
                 <datalist id="manufacturerss">
                     <option *ngFor="let manufacturer of manufacturers" data-value="{{manufacturer.ManufacturerId}}">
                         {{manufacturer.ManufacturerName}}</option>
-                    <!-- <option *ngFor="let manufacturer of manufacturers" data-value="manufacturer.ManufacturerId" value="manufacturer.ManufacturerName"> -->
                 </datalist>
             </div>
             <div class="form-group">
                 <label>Category:</label>
-                <!-- <select id="categoryId" name="categoryId" #categoryId [(ngModel)]="item.categoryId">
-                    <option value=0 disabled selected> -- Select your option --</option>
-                    <option *ngFor="let category of categories" value="{{category.id}}">{{category.Name}}</option>
-                </select> -->
-                <select name="categoryId" id="categoryId" [(ngModel)]="item.categoryId" #categoryId required>
-                    <option value=0 selected="selected"> -- Select your option --</option>
+
+                <select name="categoryId" id="categoryId" #categoryId [(ngModel)]="updates.categoryId">
                     <option *ngFor="let category of categories" value="{{category.Id}}" class="form-control">
                         {{category.Name}}
                     </option>
+
                 </select>
             </div>
             <div class="form-group">
                 <label>What unit is used in measuring your product ex:pieces, liters, etc: </label>
-                <input name="name" type="text" [(ngModel)]="item.MeasurementUnit" required />
+                <input name="measurementUnit" type="text" [(ngModel)]="updates.measurementUnit" id="measurementUnit" />
             </div>
             <div class="form-group">
                 <label>What is the quantity/pieces in one package if applicable: </label>
-                <input name="name" type="text" [(ngModel)]="item.quantityPerUnit" />
+                <input name="quantityPerUnit" type="text" [(ngModel)]="updates.quantityPerUnit" id="quantityPerUnit" />
             </div>
             <div class="form-group">
                 <label>Price per unit (RWF): </label>
-                <input name="name" type="number" [(ngModel)]="item.price" required />
+                <input name="totalPrice" type="number" [(ngModel)]="updates.totalPrice" id="price" />
             </div>
             <div class="form-group">
                 <label>Quantity in stock: </label>
-                <input name="name" type="number" [(ngModel)]="item.quantity" />
+                <input name="quantity" type="number" [(ngModel)]="updates.quantity" id="quantity" />
             </div>
+
         </div>
         <div class="bottom_buttons">
             <button class="btn-bottom btn-primary button" type="submit" [disabled]="saveForm.invalid"
@@ -75,7 +73,7 @@
         <ng-template [ngIf]="!success">
             <div class="content">
                 <p>Could not add product to stock try again</p>
-                <i class="bi bi-x-octagon-fill"></i>            
+                <i class="bi bi-x-octagon-fill"></i>
             </div>
         </ng-template>
     </app-popup>

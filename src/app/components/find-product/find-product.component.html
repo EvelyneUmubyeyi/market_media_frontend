@@ -3,6 +3,7 @@
 </div>
 <div class="find_products">
     <div class="filters">
+        <div class="filters_list">
         <div class="sub_category">
             <p>Select sub-category</p>
             <select id="categories" name="category" ngModel="category" aria-describedby="categoryId" #categoryId>
@@ -10,13 +11,16 @@
                 <option *ngFor="let subCategory of subCategories" value="{{subCategory.id}}">{{subCategory.name}}</option>
             </select>    
         </div>
+        </div>
+        <button class="filter_button">Filter</button>
     </div>
     <div class="products">
         <div class="product" *ngFor = "let product of products" routerLink="/productDescription"
         (click)="setProductIdDescription(product.id)">
-            <img class="product_photo" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2R1Y3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-            alt="product"  height="200px">
+            <img class="product_photo" [src]="product.ImageUrl" alt="product"  height="200px">
+            <div class="product_description">
             <p>{{product.Name}}</p>
-            <a routerLink="/productSellers" (click)="setProductId(product.id)">See list of sellers</a>
+            <a (click)="setProductId(product.Id)">See list of sellers</a>
+            </div>
         </div>
     </div>
